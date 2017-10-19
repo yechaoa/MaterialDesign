@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context="com.yechaoa.materialdesign.FloatingActionButtonActivity">
 
+    <include android:id="@+id/include" layout="@layout/layout_toolbar"/>
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floating_button"
         android:layout_width="wrap_content"

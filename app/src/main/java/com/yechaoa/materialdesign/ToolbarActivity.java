@@ -26,7 +26,7 @@ public abstract class ToolbarActivity extends AppCompatActivity {
 
         setSupportActionBar(mToolbar);
         //mToolbar.inflateMenu(R.menu.menu_toolbar);
-        mToolbar.setNavigationIcon(R.mipmap.ic_launcher_round);
+        mToolbar.setNavigationIcon(R.drawable.ic_back);
     }
 
     protected abstract int getLayoutId();
@@ -45,7 +45,8 @@ public abstract class ToolbarActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             //toolbar上menu的事件处理
             case android.R.id.home:
-                Toast.makeText(this, "back", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "back", Toast.LENGTH_SHORT).show();
+                finish();
                 return true;
             case R.id.action_search:
                 Toast.makeText(this, "search", Toast.LENGTH_SHORT).show();

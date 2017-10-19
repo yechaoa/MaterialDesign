@@ -40,7 +40,8 @@ public class MainActivity extends ToolbarActivity {
 
     @Override
     protected void initView() {
-
+        mToolbar.setNavigationIcon(R.mipmap.ic_launcher_round);
+        mToolbar.setNavigationOnClickListener(null);
     }
 
     @OnClick({R.id.btn_swipe_refresh, R.id.btn_floating_action, R.id.btn_snack_bar, R.id.btn_tab_layout, R.id.btn_card_view, R.id.button6, R.id.button7})

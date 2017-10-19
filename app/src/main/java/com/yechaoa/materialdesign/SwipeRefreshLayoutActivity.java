@@ -10,7 +10,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SwipeRefreshLayoutActivity extends AppCompatActivity {
+public class SwipeRefreshLayoutActivity extends ToolbarActivity {
 
     @BindView(R.id.tv_refresh)
     TextView mTvRefresh;
@@ -26,11 +26,13 @@ public class SwipeRefreshLayoutActivity extends AppCompatActivity {
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_swipe_refresh_layout);
-        ButterKnife.bind(this);
+    protected int getLayoutId() {
+        return R.layout.activity_swipe_refresh_layout;
+    }
 
+    @Override
+    protected void initView() {
+        mToolbar.setTitle("SwipeRefreshLayout");
         mSwipeRefreshLayout.setColorSchemeResources(
                 android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
