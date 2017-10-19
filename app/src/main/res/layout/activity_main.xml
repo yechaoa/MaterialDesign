@@ -8,7 +8,7 @@
     tools:context="com.yechaoa.materialdesign.MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_swipe_refresh"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_floating_action"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -31,10 +31,10 @@
         android:textAllCaps="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_swipe_refresh"/>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_snack_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -44,10 +44,10 @@
         android:textAllCaps="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_floating_action"/>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_tab_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -57,10 +57,10 @@
         android:textAllCaps="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_snack_bar"/>
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btn_card_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -70,7 +70,7 @@
         android:textAllCaps="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_tab_layout"/>
 
     <Button
         android:id="@+id/button6"
@@ -83,7 +83,7 @@
         android:textAllCaps="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_card_view"/>
 
     <Button
         android:id="@+id/button7"

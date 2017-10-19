@@ -7,4 +7,6 @@
     <string name="snack_bar">Snackbar</string>
     <string name="tab_layout">TabLayout</string>
 
+    <string name="pull_to_refresh">下拉开始刷新</string>
+
 </resources>
