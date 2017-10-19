@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context="com.yechaoa.materialdesign.MainActivity">
 
+    <include android:id="@+id/include" layout="@layout/layout_toolbar"/>
+
     <Button
         android:id="@+id/btn_swipe_refresh"
         android:layout_width="0dp"
@@ -18,7 +20,7 @@
         android:textAllCaps="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/include"/>
 
     <Button
         android:id="@+id/btn_floating_action"

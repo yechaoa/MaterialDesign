@@ -18,6 +18,10 @@
         </activity>
         <activity android:name=".SwipeRefreshLayoutActivity">
         </activity>
+        <activity android:name=".FloatingActionButtonActivity">
+        </activity>
+        <activity android:name=".ToolbarActivity">
+        </activity>
     </application>
 
 </manifest>
