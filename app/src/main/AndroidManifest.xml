@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".ToolbarActivity">
         </activity>
+        <activity android:name=".SnackbarActivity">
+        </activity>
     </application>
 
 </manifest>

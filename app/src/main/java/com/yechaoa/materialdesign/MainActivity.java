@@ -53,6 +53,7 @@ public class MainActivity extends ToolbarActivity {
                 startActivity(new Intent(MainActivity.this, FloatingActionButtonActivity.class));
                 break;
             case R.id.btn_snack_bar:
+                startActivity(new Intent(MainActivity.this, SnackbarActivity.class));
                 break;
             case R.id.btn_tab_layout:
                 break;
