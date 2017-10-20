@@ -8,14 +8,24 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--修改字体和图标的颜色-->
     <style name="AppTheme.ToolBar" parent="AppTheme">
-        <item name="android:windowActionBarOverlay">@style/ActionButton.Overflow</item>
-        <item name="actionOverflowButtonStyle">@style/ActionButton.Overflow</item>
+        <!--<item name="android:windowActionBarOverlay">@style/ActionButton.Overflow</item>
+        <item name="actionOverflowButtonStyle">@style/ActionButton.Overflow</item>-->
         <item name="titleTextColor">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="actionOverflowMenuStyle">@style/PopupMenu.Overflow</item>
     </style>
 
+    <!--自定义右上角的图标-->
     <style name="ActionButton.Overflow" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
         <item name="android:src">@drawable/menu_more</item>
+    </style>
+
+    <!--修改toolbar弹出框的位置-->
+    <style name="PopupMenu.Overflow" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <!--false表示弹出框位置位于toolbar下面-->
+        <item name="overlapAnchor">false</item>
     </style>
 
 </resources>

@@ -4,7 +4,7 @@
     <item
         android:id="@+id/action_search"
         android:icon="@drawable/menu_search"
-        android:title="@string/app_name"
+        android:title="@string/search"
         app:showAsAction="ifRoom"/>
     <!--
         item的icon和title属性顾名思义，
@@ -15,11 +15,13 @@
         这个动作将总是放置在溢出菜单中。
     -->
     <item
-        android:id="@+id/menu_more1"
+        android:id="@+id/menu_share"
         android:icon="@mipmap/ic_launcher"
-        android:title="@string/app_name"/>
+        android:title="@string/share"
+        app:showAsAction="never"/>
     <item
-        android:id="@+id/menu_more2"
+        android:id="@+id/menu_settings"
         android:icon="@mipmap/ic_launcher"
-        android:title="@string/app_name"/>
+        android:title="@string/settings"
+        app:showAsAction="never"/>
 </menu>
