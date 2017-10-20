@@ -1,14 +1,11 @@
 package com.yechaoa.materialdesign;
 
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class SwipeRefreshLayoutActivity extends ToolbarActivity {
 
@@ -31,8 +28,12 @@ public class SwipeRefreshLayoutActivity extends ToolbarActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void setToolbar() {
         mToolbar.setTitle("SwipeRefreshLayout");
+    }
+
+    @Override
+    protected void initView() {
         mSwipeRefreshLayout.setColorSchemeResources(
                 android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
@@ -40,7 +41,7 @@ public class SwipeRefreshLayoutActivity extends ToolbarActivity {
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                handler.sendEmptyMessageDelayed(1, 3000);
+                handler.sendEmptyMessageDelayed(1, 2000);
             }
         });
     }

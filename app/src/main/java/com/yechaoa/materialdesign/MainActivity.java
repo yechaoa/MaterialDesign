@@ -31,6 +31,11 @@ public class MainActivity extends ToolbarActivity {
     }
 
     @Override
+    protected void setToolbar() {
+
+    }
+
+    @Override
     protected void initView() {
         //设置返回键图标并处理点击事件
 //        mToolbar.setNavigationIcon(R.mipmap.ic_launcher_round);
@@ -56,6 +61,7 @@ public class MainActivity extends ToolbarActivity {
                 startActivity(new Intent(MainActivity.this, SnackbarActivity.class));
                 break;
             case R.id.btn_tab_layout:
+                startActivity(new Intent(MainActivity.this, TabLayoutActivity.class));
                 break;
             case R.id.btn_card_view:
                 break;

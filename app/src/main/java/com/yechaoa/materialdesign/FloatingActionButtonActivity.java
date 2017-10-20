@@ -16,8 +16,13 @@ public class FloatingActionButtonActivity extends ToolbarActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void setToolbar() {
         mToolbar.setTitle("FloatingActionButton");
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
     @OnClick(R.id.floating_button)

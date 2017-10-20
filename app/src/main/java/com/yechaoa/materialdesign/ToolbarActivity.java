@@ -34,12 +34,15 @@ public abstract class ToolbarActivity extends AppCompatActivity {
         //自定义返回键icon
         //mToolbar.setNavigationIcon(R.drawable.ic_back);
 
+        setToolbar();
         initView();
     }
 
     protected abstract int getLayoutId();
 
     protected abstract void initView();
+
+    protected abstract void setToolbar();
 
     /**
      * 引入toolbar上的menu

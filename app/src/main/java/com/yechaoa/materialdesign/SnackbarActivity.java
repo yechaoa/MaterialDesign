@@ -30,8 +30,13 @@ public class SnackbarActivity extends ToolbarActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void setToolbar() {
         mToolbar.setTitle("Snackbar");
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
     @OnClick({R.id.button, R.id.button2, R.id.button3})
@@ -70,13 +75,13 @@ public class SnackbarActivity extends ToolbarActivity {
                     @Override
                     public void onDismissed(Snackbar transientBottomBar, int event) {
                         super.onDismissed(transientBottomBar, event);
-                        Log.i(TAG, "onDismissed(SnackbarActivity.java:73)--->> " + "onDismissed");
+                        Log.i(TAG, "onDismissed(SnackbarActivity.java:78)--->> " + "onDismissed");
                     }
 
                     @Override
                     public void onShown(Snackbar sb) {
                         super.onShown(sb);
-                        Log.i(TAG, "onShown(SnackbarActivity.java:79)--->> " + "onShown");
+                        Log.i(TAG, "onShown(SnackbarActivity.java:84)--->> " + "onShown");
                     }
                 });
                 break;
