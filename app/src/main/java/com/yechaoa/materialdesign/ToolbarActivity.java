@@ -40,9 +40,9 @@ public abstract class ToolbarActivity extends AppCompatActivity {
 
     protected abstract int getLayoutId();
 
-    protected abstract void initView();
-
     protected abstract void setToolbar();
+
+    protected abstract void initView();
 
     /**
      * 引入toolbar上的menu

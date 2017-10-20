@@ -52,18 +52,19 @@ public class MainActivity extends ToolbarActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_swipe_refresh:
-                startActivity(new Intent(MainActivity.this, SwipeRefreshLayoutActivity.class));
+                openActivity(SwipeRefreshLayoutActivity.class);
                 break;
             case R.id.btn_floating_action:
-                startActivity(new Intent(MainActivity.this, FloatingActionButtonActivity.class));
+                openActivity(FloatingActionButtonActivity.class);
                 break;
             case R.id.btn_snack_bar:
-                startActivity(new Intent(MainActivity.this, SnackbarActivity.class));
+                openActivity(SnackbarActivity.class);
                 break;
             case R.id.btn_tab_layout:
-                startActivity(new Intent(MainActivity.this, TabLayoutActivity.class));
+                openActivity(TabLayoutActivity.class);
                 break;
             case R.id.btn_card_view:
+                openActivity(CardViewActivity.class);
                 break;
             case R.id.button6:
                 break;
@@ -80,4 +81,9 @@ public class MainActivity extends ToolbarActivity {
         menu.findItem(R.id.action_search).setVisible(false);
         return super.onPrepareOptionsMenu(menu);
     }
+
+    private void openActivity(Class<?> targetActivityClass) {
+        startActivity(new Intent(MainActivity.this, targetActivityClass));
+    }
+
 }
