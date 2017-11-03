@@ -1,4 +1,4 @@
-package com.yechaoa.materialdesign;
+package com.yechaoa.materialdesign.activity;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -6,6 +6,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
+import com.yechaoa.materialdesign.R;
+import com.yechaoa.materialdesign.activity.ToolbarActivity;
 import com.yechaoa.materialdesign.fragment.Fragment1;
 import com.yechaoa.materialdesign.fragment.Fragment2;
 import com.yechaoa.materialdesign.fragment.Fragment3;

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yechaoa.materialdesign.CardViewActivity">
+    tools:context="com.yechaoa.materialdesign.activity.CardViewActivity">
 
     <include
         android:id="@+id/include"

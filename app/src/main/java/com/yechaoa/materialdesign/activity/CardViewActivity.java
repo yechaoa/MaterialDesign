@@ -1,8 +1,10 @@
-package com.yechaoa.materialdesign;
+package com.yechaoa.materialdesign.activity;
 
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Toast;
+
+import com.yechaoa.materialdesign.R;
 
 import butterknife.BindView;
 

@@ -1,9 +1,12 @@
-package com.yechaoa.materialdesign;
+package com.yechaoa.materialdesign.activity;
 
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.widget.TextView;
+
+import com.yechaoa.materialdesign.R;
+import com.yechaoa.materialdesign.activity.ToolbarActivity;
 
 import butterknife.BindView;
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/constraint_layout"
-    tools:context="com.yechaoa.materialdesign.SnackbarActivity">
+    tools:context="com.yechaoa.materialdesign.activity.SnackbarActivity">
 
     <include android:id="@+id/include" layout="@layout/layout_toolbar"/>
 

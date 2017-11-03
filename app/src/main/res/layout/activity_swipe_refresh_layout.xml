@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yechaoa.materialdesign.SwipeRefreshLayoutActivity">
+    tools:context="com.yechaoa.materialdesign.activity.SwipeRefreshLayoutActivity">
 
     <include android:id="@+id/include" layout="@layout/layout_toolbar"/>
 
