@@ -34,6 +34,11 @@
             android:name=".activity.BottomNavigationActivity"
             android:label="@string/title_activity_bottom_navigation">
         </activity>
+        <activity
+            android:name=".activity.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme">
+        </activity>
     </application>
 
 </manifest>
