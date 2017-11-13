@@ -20,7 +20,7 @@ public class CardViewActivity extends ToolbarActivity {
 
     @Override
     protected void setToolbar() {
-        mToolbar.setTitle("CardView");
+        mToolbar.setTitle(R.string.card_view);
     }
 
     @Override

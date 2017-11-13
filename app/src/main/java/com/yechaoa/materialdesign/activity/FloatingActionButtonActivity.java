@@ -20,7 +20,7 @@ public class FloatingActionButtonActivity extends ToolbarActivity {
 
     @Override
     protected void setToolbar() {
-        mToolbar.setTitle("FloatingActionButton");
+        mToolbar.setTitle(R.string.floating_action_button);
     }
 
     @Override

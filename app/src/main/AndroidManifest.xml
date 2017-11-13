@@ -28,6 +28,12 @@
         </activity>
         <activity android:name=".activity.CardViewActivity">
         </activity>
+        <activity android:name=".activity.MyDialogActivity">
+        </activity>
+        <activity
+            android:name=".activity.BottomNavigationActivity"
+            android:label="@string/title_activity_bottom_navigation">
+        </activity>
     </application>
 
 </manifest>

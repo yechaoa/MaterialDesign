@@ -22,10 +22,10 @@ public class MainActivity extends ToolbarActivity {
     Button mBtnTabLayout;
     @BindView(R.id.btn_card_view)
     Button mBtnCardView;
-    @BindView(R.id.button6)
-    Button mButton6;
     @BindView(R.id.button7)
     Button mButton7;
+    @BindView(R.id.bottom_navigation)
+    Button mBottomNavigation;
 
     @Override
     protected int getLayoutId() {
@@ -50,7 +50,7 @@ public class MainActivity extends ToolbarActivity {
         invalidateOptionsMenu();
     }
 
-    @OnClick({R.id.btn_swipe_refresh, R.id.btn_floating_action, R.id.btn_snack_bar, R.id.btn_tab_layout, R.id.btn_card_view, R.id.button6, R.id.button7})
+    @OnClick({R.id.btn_swipe_refresh, R.id.btn_floating_action, R.id.btn_snack_bar, R.id.btn_tab_layout, R.id.btn_card_view, R.id.bottom_navigation, R.id.button7})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_swipe_refresh:
@@ -68,7 +68,9 @@ public class MainActivity extends ToolbarActivity {
             case R.id.btn_card_view:
                 openActivity(CardViewActivity.class);
                 break;
-            case R.id.button6:
+            case R.id.bottom_navigation:
+                //openActivity(MyDialogActivity.class);
+                openActivity(BottomNavigationActivity.class);
                 break;
             case R.id.button7:
                 break;

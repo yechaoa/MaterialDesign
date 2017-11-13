@@ -10,7 +10,14 @@
     <string name="card_view">CardView</string>
     <string name="snack_bar">Snackbar</string>
     <string name="tab_layout">TabLayout</string>
+    <string name="bottom_navigation">BottomNavigation</string>
 
     <string name="pull_to_refresh">下拉开始刷新</string>
+    <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_test">Test</string>
 
 </resources>
