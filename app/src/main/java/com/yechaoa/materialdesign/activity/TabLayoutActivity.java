@@ -28,7 +28,7 @@ public class TabLayoutActivity extends ToolbarActivity {
 
     @Override
     protected void setToolbar() {
-        mToolbar.setTitle("TabLayout");
+        mToolbar.setTitle(R.string.tab_layout);
     }
 
     @Override

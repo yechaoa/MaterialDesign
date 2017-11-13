@@ -33,7 +33,7 @@ public class SnackbarActivity extends ToolbarActivity {
 
     @Override
     protected void setToolbar() {
-        mToolbar.setTitle("Snackbar");
+        mToolbar.setTitle(R.string.snack_bar);
     }
 
     @Override

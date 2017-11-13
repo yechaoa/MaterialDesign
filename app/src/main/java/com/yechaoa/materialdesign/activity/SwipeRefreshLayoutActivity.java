@@ -32,7 +32,7 @@ public class SwipeRefreshLayoutActivity extends ToolbarActivity {
 
     @Override
     protected void setToolbar() {
-        mToolbar.setTitle("SwipeRefreshLayout");
+        mToolbar.setTitle(R.string.swipe_refresh_layout);
     }
 
     @Override
