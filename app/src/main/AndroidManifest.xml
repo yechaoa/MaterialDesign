@@ -36,8 +36,11 @@
         </activity>
         <activity
             android:name=".activity.ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme">
+            android:label="@string/title_activity_scrolling" >
+        </activity>
+        <activity
+            android:name=".activity.TabViewPagerScrollActivity"
+            android:label="@string/title_activity_scrolling" >
         </activity>
     </application>
 
