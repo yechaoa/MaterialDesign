@@ -24,12 +24,23 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
+            <!--
+            scroll ：想要触发滑动事件，必须要加上这个属性，不加最后会停在顶端，比如Tablayout
+            exitUntilCollapsed ：表示滑动到最后折叠在顶端
+            enterAlways ：表示向上滑动消失，向下滑动可见
+            -->
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+            <!--
+            pin ：固定模式，在折叠的时候最后固定在顶端
+            parallax ：视差模式，在折叠的时候会有个视差折叠的效果。
+            -->
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
