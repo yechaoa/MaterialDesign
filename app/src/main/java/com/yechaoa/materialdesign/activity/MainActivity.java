@@ -26,6 +26,8 @@ public class MainActivity extends ToolbarActivity {
     Button mBottomNavigation;
     @BindView(R.id.scrolling_bar)
     Button mScrollingBar;
+    @BindView(R.id.text_input_layout)
+    Button mTextInputLayout;
 
     @Override
     protected int getLayoutId() {
@@ -50,7 +52,7 @@ public class MainActivity extends ToolbarActivity {
         invalidateOptionsMenu();
     }
 
-    @OnClick({R.id.btn_swipe_refresh, R.id.btn_floating_action, R.id.btn_snack_bar, R.id.btn_tab_layout, R.id.btn_card_view, R.id.bottom_navigation, R.id.scrolling_bar})
+    @OnClick({R.id.btn_swipe_refresh, R.id.btn_floating_action, R.id.btn_snack_bar, R.id.btn_tab_layout, R.id.btn_card_view, R.id.bottom_navigation, R.id.scrolling_bar, R.id.text_input_layout})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_swipe_refresh:
@@ -74,6 +76,9 @@ public class MainActivity extends ToolbarActivity {
                 break;
             case R.id.scrolling_bar:
                 openActivity(ScrollingActivity.class);
+                break;
+            case R.id.text_input_layout:
+                openActivity(TextInputLayoutActivity.class);
                 break;
         }
     }

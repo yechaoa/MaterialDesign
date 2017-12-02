@@ -101,13 +101,13 @@
         app:layout_constraintTop_toBottomOf="@+id/bottom_navigation"/>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/text_input_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Button"
+        android:text="@string/text_input_layout"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,6 +124,6 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"/>
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout"/>
 
 </android.support.constraint.ConstraintLayout>

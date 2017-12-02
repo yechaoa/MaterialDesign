@@ -6,6 +6,8 @@
 
     <color name="white">#ffffff</color>
     <color name="red">#f00</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="orange">#FF8C00</color>
     <color name="black">#333</color>
     <color name="gray">#808080</color>
     <color name="translucent">#66000000</color>
