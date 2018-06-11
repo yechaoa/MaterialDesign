@@ -65,9 +65,6 @@ public abstract class ToolbarActivity extends AppCompatActivity {
                 //Toast.makeText(this, "back", Toast.LENGTH_SHORT).show();
                 finish();
                 return true;
-            case R.id.action_search:
-                Toast.makeText(this, "搜索", Toast.LENGTH_SHORT).show();
-                return true;
             case R.id.menu_share:
                 Toast.makeText(this, "分享", Toast.LENGTH_SHORT).show();
                 return true;

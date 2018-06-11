@@ -28,6 +28,8 @@ public class MainActivity extends ToolbarActivity {
     Button mScrollingBar;
     @BindView(R.id.text_input_layout)
     Button mTextInputLayout;
+    @BindView(R.id.search_view)
+    Button mSearchView;
 
     @Override
     protected int getLayoutId() {
@@ -52,7 +54,7 @@ public class MainActivity extends ToolbarActivity {
         invalidateOptionsMenu();
     }
 
-    @OnClick({R.id.btn_swipe_refresh, R.id.btn_floating_action, R.id.btn_snack_bar, R.id.btn_tab_layout, R.id.btn_card_view, R.id.bottom_navigation, R.id.scrolling_bar, R.id.text_input_layout})
+    @OnClick({R.id.btn_swipe_refresh, R.id.btn_floating_action, R.id.btn_snack_bar, R.id.btn_tab_layout, R.id.btn_card_view, R.id.bottom_navigation, R.id.scrolling_bar, R.id.text_input_layout, R.id.search_view})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_swipe_refresh:
@@ -80,6 +82,9 @@ public class MainActivity extends ToolbarActivity {
             case R.id.text_input_layout:
                 openActivity(TextInputLayoutActivity.class);
                 break;
+            case R.id.search_view:
+                openActivity(SearchViewActivity.class);
+                break;
         }
     }
 
@@ -88,7 +93,7 @@ public class MainActivity extends ToolbarActivity {
      */
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        menu.findItem(R.id.action_search).setVisible(false);
+        //menu.findItem(R.id.action_search).setVisible(false);
         return super.onPrepareOptionsMenu(menu);
     }
 

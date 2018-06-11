@@ -7,6 +7,7 @@
 ![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/snackbar.gif)
 ![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/text.gif)
 ![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/swipe.gif)
+![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/search_view.gif)
 
 * ConstraintLayout
 * CoordinatorLayout
@@ -22,6 +23,7 @@
 * SwipeRefreshLayout
 * TextInputLayout
 * TextInputEditText
+* SearchView
 
 <br>
 

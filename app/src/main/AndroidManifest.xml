@@ -16,23 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SwipeRefreshLayoutActivity"></activity>
-        <activity android:name=".activity.FloatingActionButtonActivity"></activity>
-        <activity android:name=".activity.ToolbarActivity"></activity>
-        <activity android:name=".activity.SnackbarActivity"></activity>
-        <activity android:name=".activity.TabLayoutActivity"></activity>
-        <activity android:name=".activity.CardViewActivity"></activity>
-        <activity android:name=".activity.MyDialogActivity"></activity>
+        <activity android:name=".activity.SwipeRefreshLayoutActivity" />
+        <activity android:name=".activity.FloatingActionButtonActivity" />
+        <activity android:name=".activity.ToolbarActivity" />
+        <activity android:name=".activity.SnackbarActivity" />
+        <activity android:name=".activity.TabLayoutActivity" />
+        <activity android:name=".activity.CardViewActivity" />
+        <activity android:name=".activity.MyDialogActivity" />
         <activity
             android:name=".activity.BottomNavigationActivity"
-            android:label="@string/title_activity_bottom_navigation"></activity>
+            android:label="@string/title_activity_bottom_navigation" />
         <activity
             android:name=".activity.ScrollingActivity"
-            android:label="@string/title_activity_scrolling"></activity>
+            android:label="@string/title_activity_scrolling" />
         <activity
             android:name=".activity.TabViewPagerScrollActivity"
-            android:label="@string/title_activity_scrolling"></activity>
-        <activity android:name=".activity.TextInputLayoutActivity"></activity>
+            android:label="@string/title_activity_scrolling" />
+        <activity android:name=".activity.TextInputLayoutActivity" />
+        <activity android:name=".activity.SearchViewActivity"></activity>
     </application>
 
 </manifest>
