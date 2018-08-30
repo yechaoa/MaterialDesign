@@ -12,25 +12,6 @@ import butterknife.OnClick;
 
 public class MainActivity extends ToolbarActivity {
 
-    @BindView(R.id.btn_swipe_refresh)
-    Button mBtnSwipeRefresh;
-    @BindView(R.id.btn_floating_action)
-    Button mBtnFloatingAction;
-    @BindView(R.id.btn_snack_bar)
-    Button mBtnSnackBar;
-    @BindView(R.id.btn_tab_layout)
-    Button mBtnTabLayout;
-    @BindView(R.id.btn_card_view)
-    Button mBtnCardView;
-    @BindView(R.id.bottom_navigation)
-    Button mBottomNavigation;
-    @BindView(R.id.scrolling_bar)
-    Button mScrollingBar;
-    @BindView(R.id.text_input_layout)
-    Button mTextInputLayout;
-    @BindView(R.id.search_view)
-    Button mSearchView;
-
     @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
@@ -54,7 +35,7 @@ public class MainActivity extends ToolbarActivity {
         invalidateOptionsMenu();
     }
 
-    @OnClick({R.id.btn_swipe_refresh, R.id.btn_floating_action, R.id.btn_snack_bar, R.id.btn_tab_layout, R.id.btn_card_view, R.id.bottom_navigation, R.id.scrolling_bar, R.id.text_input_layout, R.id.search_view})
+    @OnClick({R.id.btn_swipe_refresh, R.id.btn_floating_action, R.id.btn_snack_bar, R.id.btn_tab_layout, R.id.btn_card_view, R.id.bottom_navigation, R.id.scrolling_bar, R.id.text_input_layout, R.id.search_view,R.id.tab_layout_custom_view})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_swipe_refresh:
@@ -84,6 +65,9 @@ public class MainActivity extends ToolbarActivity {
                 break;
             case R.id.search_view:
                 openActivity(SearchViewActivity.class);
+                break;
+            case R.id.tab_layout_custom_view:
+                openActivity(TabLayoutCustomViewActivity.class);
                 break;
         }
     }

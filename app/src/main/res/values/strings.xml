@@ -14,6 +14,7 @@
     <string name="scrolling_bar">ScrollingActivity</string>
     <string name="text_input_layout">TextInputLayoutActivity</string>
     <string name="search_view">SearchView</string>
+    <string name="tab_layout_custom_view">TabLayoutCustomViewActivity</string>
 
     <string name="pull_to_refresh">下拉开始刷新</string>
     <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>

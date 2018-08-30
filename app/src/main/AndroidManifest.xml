@@ -34,6 +34,7 @@
             android:label="@string/title_activity_scrolling" />
         <activity android:name=".activity.TextInputLayoutActivity" />
         <activity android:name=".activity.SearchViewActivity"></activity>
+        <activity android:name=".activity.TabLayoutCustomViewActivity"/>
     </application>
 
 </manifest>
