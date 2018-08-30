@@ -12,7 +12,7 @@
         android:layout_height="24dp"
         android:gravity="bottom"
         android:text="22:00"
-        android:textColor="@drawable/selector_text_color_e5004f"
+        android:textColor="@drawable/selector_text_color"
         android:textSize="12sp"/>
 
     <TextView
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="秒杀中"
-        android:textColor="@drawable/selector_text_color_e5004f"
+        android:textColor="@drawable/selector_text_color"
         android:textSize="12sp"/>
 
 </LinearLayout>
