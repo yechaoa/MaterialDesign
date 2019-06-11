@@ -8,6 +8,7 @@
 ![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/text.gif)
 ![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/swipe.gif)
 ![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/search_view.gif)
+![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/drawer.gif)
 
 * ConstraintLayout
 * CoordinatorLayout
@@ -24,6 +25,8 @@
 * TextInputLayout
 * TextInputEditText
 * SearchView
+* NavigationView
+* DrawerLayout
 
 <br>
 

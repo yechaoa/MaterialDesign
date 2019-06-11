@@ -35,6 +35,7 @@
         <activity android:name=".activity.TextInputLayoutActivity" />
         <activity android:name=".activity.SearchViewActivity"></activity>
         <activity android:name=".activity.TabLayoutCustomViewActivity"/>
+        <activity android:name=".activity.DrawerLayoutActivity"/>
     </application>
 
 </manifest>

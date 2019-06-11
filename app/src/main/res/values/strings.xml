@@ -4,6 +4,8 @@
     <string name="search">搜索</string>
     <string name="share">分享</string>
     <string name="settings">设置</string>
+    <string name="open">打开</string>
+    <string name="close">关闭</string>
 
     <string name="swipe_refresh_layout">SwipeRefreshLayout</string>
     <string name="floating_action_button">FloatingActionButton</string>
@@ -15,6 +17,7 @@
     <string name="text_input_layout">TextInputLayoutActivity</string>
     <string name="search_view">SearchView</string>
     <string name="tab_layout_custom_view">TabLayoutCustomViewActivity</string>
+    <string name="drawer_layout">DrawerLayoutActivity</string>
 
     <string name="pull_to_refresh">下拉开始刷新</string>
     <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>

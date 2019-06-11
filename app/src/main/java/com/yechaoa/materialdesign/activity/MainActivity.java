@@ -3,11 +3,9 @@ package com.yechaoa.materialdesign.activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 
 import com.yechaoa.materialdesign.R;
 
-import butterknife.BindView;
 import butterknife.OnClick;
 
 public class MainActivity extends ToolbarActivity {
@@ -35,7 +33,9 @@ public class MainActivity extends ToolbarActivity {
         invalidateOptionsMenu();
     }
 
-    @OnClick({R.id.btn_swipe_refresh, R.id.btn_floating_action, R.id.btn_snack_bar, R.id.btn_tab_layout, R.id.btn_card_view, R.id.bottom_navigation, R.id.scrolling_bar, R.id.text_input_layout, R.id.search_view,R.id.tab_layout_custom_view})
+    @OnClick({R.id.btn_swipe_refresh, R.id.btn_floating_action, R.id.btn_snack_bar, R.id.btn_tab_layout,
+            R.id.btn_card_view, R.id.bottom_navigation, R.id.scrolling_bar, R.id.text_input_layout,
+            R.id.search_view, R.id.tab_layout_custom_view, R.id.drawer_layout})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_swipe_refresh:
@@ -68,6 +68,9 @@ public class MainActivity extends ToolbarActivity {
                 break;
             case R.id.tab_layout_custom_view:
                 openActivity(TabLayoutCustomViewActivity.class);
+                break;
+            case R.id.drawer_layout:
+                openActivity(DrawerLayoutActivity.class);
                 break;
         }
     }
