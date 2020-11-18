@@ -1,56 +1,37 @@
-package com.yechaoa.materialdesign.fragment;
+package com.yechaoa.materialdesign.fragment
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.yechaoa.materialdesign.R
+import com.yechaoa.materialdesign.adapter.StringAdapter
+import kotlinx.android.synthetic.main.fragment_fragment4.*
+import java.util.*
 
-import com.yechaoa.materialdesign.R;
-import com.yechaoa.materialdesign.adapter.StringAdapter;
+class Fragment4 : Fragment() {
 
-import java.util.ArrayList;
-import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
-public class Fragment4 extends Fragment {
-
-    @BindView(R.id.recycleView)
-    RecyclerView mRecycleView;
-    Unbinder unbinder;
-    private List<String> mList;
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_fragment4, container, false);
-        unbinder = ButterKnife.bind(this, view);
-        initData();
-        return view;
+    private var mList: MutableList<String> = mutableListOf()
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_fragment4, container, false)
+        initData()
+        return view
     }
 
-    private void initData() {
-        mList=new ArrayList<>();
-        for (int i=0;i<20;i++){
-            mList.add("MaterialDesign"+i);
+    private fun initData() {
+        mList = ArrayList()
+        for (i in 0..19) {
+            mList.add("MaterialDesign$i")
         }
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        mRecycleView.setLayoutManager(linearLayoutManager);
-        mRecycleView.setAdapter(new StringAdapter(getActivity(),mList));
+    override fun onStart() {
+        super.onStart()
+        val linearLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        recycleView.layoutManager = linearLayoutManager
+        recycleView.adapter = StringAdapter(activity, mList)
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
 }

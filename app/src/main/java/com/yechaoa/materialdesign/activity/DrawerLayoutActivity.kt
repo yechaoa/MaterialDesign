@@ -1,96 +1,74 @@
-package com.yechaoa.materialdesign.activity;
+package com.yechaoa.materialdesign.activity
 
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
+import android.util.Log
+import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
+import com.google.android.material.navigation.NavigationView
+import com.yechaoa.materialdesign.R
+import kotlinx.android.synthetic.main.activity_drawer_layout.*
 
-import com.yechaoa.materialdesign.R;
+class DrawerLayoutActivity : ToolbarActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
-public class DrawerLayoutActivity extends ToolbarActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-    @BindView(R.id.drawer_layout)
-    DrawerLayout mDrawerLayout;
-    @BindView(R.id.navigation_view)
-    NavigationView mNavigationView;
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_drawer_layout;
+    override fun getLayoutId(): Int {
+        return R.layout.activity_drawer_layout
     }
 
-    @Override
-    protected void setToolbar() {
-        mToolbar.setTitle(R.string.drawer_layout);
+    override fun setToolbar() {
+        mToolbar.setTitle(R.string.drawer_layout)
     }
 
-    @Override
-    protected void initView() {
+    override fun initView() {
 
         //mDrawerLayout与mToolbar关联起来
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.open, R.string.close);
+        val actionBarDrawerToggle = ActionBarDrawerToggle(this, drawer_layout, mToolbar, R.string.open, R.string.close)
         //初始化状态
-        actionBarDrawerToggle.syncState();
+        actionBarDrawerToggle.syncState()
         //ActionBarDrawerToggle implements DrawerLayout.DrawerListener
-        mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
+        drawer_layout.addDrawerListener(actionBarDrawerToggle)
 
         //监听
-        mDrawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
-            @Override
-            public void onDrawerSlide(@NonNull View view, float v) {
-                Log.i("---", "滑动中");
+        drawer_layout.addDrawerListener(object : DrawerListener {
+            override fun onDrawerSlide(view: View, v: Float) {
+                Log.i("---", "滑动中")
             }
 
-            @Override
-            public void onDrawerOpened(@NonNull View view) {
-                Log.i("---", "打开");
+            override fun onDrawerOpened(view: View) {
+                Log.i("---", "打开")
             }
 
-            @Override
-            public void onDrawerClosed(@NonNull View view) {
-                Log.i("---", "关闭");
+            override fun onDrawerClosed(view: View) {
+                Log.i("---", "关闭")
             }
 
-            @Override
-            public void onDrawerStateChanged(int i) {
-                Log.i("---", "状态改变");
+            override fun onDrawerStateChanged(i: Int) {
+                Log.i("---", "状态改变")
             }
-        });
-
+        })
 
         //NavigationView 内容点击事件
-        mNavigationView.setNavigationItemSelectedListener(this);
-    }
+        navigation_view.setNavigationItemSelectedListener(this)
 
-    @OnClick({R.id.btn_open_left, R.id.btn_open_right, R.id.btn_close_right})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.btn_open_left:
-                mDrawerLayout.openDrawer(Gravity.START);
-                break;
-            case R.id.btn_open_right:
-                mDrawerLayout.openDrawer(Gravity.END);
-                break;
-            case R.id.btn_close_right:
-                mDrawerLayout.closeDrawer(Gravity.END);//关闭执行DrawerLayout
-                //mDrawerLayout.closeDrawers();//关闭所有
-                break;
+        btn_open_left.setOnClickListener {
+            drawer_layout.openDrawer(GravityCompat.START)
+        }
+
+        btn_open_right.setOnClickListener {
+            drawer_layout.openDrawer(GravityCompat.END)
+        }
+
+        //关闭执行DrawerLayout
+        btn_close_right.setOnClickListener {
+            drawer_layout.closeDrawer(GravityCompat.END)
         }
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        String title = (String) menuItem.getTitle();
-        Toast.makeText(this, "点击了----- " + title, Toast.LENGTH_SHORT).show();
-        return false;
+    override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
+        val title = menuItem.title as String
+        Toast.makeText(this, "点击了----- $title", Toast.LENGTH_SHORT).show()
+        return false
     }
 }

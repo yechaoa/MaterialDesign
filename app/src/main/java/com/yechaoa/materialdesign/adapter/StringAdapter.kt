@@ -1,58 +1,33 @@
-package com.yechaoa.materialdesign.adapter;
+package com.yechaoa.materialdesign.adapter
 
-import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
-import com.yechaoa.materialdesign.R;
-
-import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.yechaoa.materialdesign.R
 
 /**
  * Created by yechao on 2017/11/15.
  * Describe :
  */
+class StringAdapter(private val mContext: Context?, private val mList: List<String>?) : RecyclerView.Adapter<StringAdapter.ViewHolder>() {
 
-public class StringAdapter extends RecyclerView.Adapter<StringAdapter.ViewHolder> {
-
-    private Context mContext;
-    private List<String> mList;
-
-    public StringAdapter(Context context, List<String> list) {
-        this.mContext = context;
-        mList = list;
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(mContext).inflate(R.layout.item_string, parent, false)
+        return ViewHolder(view)
     }
 
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_string, parent, false);
-        return new ViewHolder(view);
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.mItemTextView!!.text = mList!![position]
     }
 
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mItemTextView.setText(mList.get(position));
+    override fun getItemCount(): Int {
+        return mList!!.size
     }
 
-    @Override
-    public int getItemCount() {
-        return mList.size();
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
-        @BindView(R.id.item_textView)
-        TextView mItemTextView;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var mItemTextView: TextView? = itemView.findViewById(R.id.item_textView)
     }
 }

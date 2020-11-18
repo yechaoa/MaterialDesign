@@ -1,88 +1,66 @@
-package com.yechaoa.materialdesign.activity;
+package com.yechaoa.materialdesign.activity
 
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import com.yechaoa.materialdesign.R
+import com.yechaoa.materialdesign.fragment.Fragment1
+import com.yechaoa.materialdesign.fragment.Fragment2
+import com.yechaoa.materialdesign.fragment.Fragment3
+import kotlinx.android.synthetic.main.activity_tab_layout.*
 
-import com.yechaoa.materialdesign.R;
-import com.yechaoa.materialdesign.activity.ToolbarActivity;
-import com.yechaoa.materialdesign.fragment.Fragment1;
-import com.yechaoa.materialdesign.fragment.Fragment2;
-import com.yechaoa.materialdesign.fragment.Fragment3;
+class TabLayoutActivity : ToolbarActivity() {
 
-import butterknife.BindView;
-
-public class TabLayoutActivity extends ToolbarActivity {
-
-    @BindView(R.id.tab_layout)
-    TabLayout mTabLayout;
-    @BindView(R.id.view_pager)
-    ViewPager mViewPager;
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_tab_layout;
+    override fun getLayoutId(): Int {
+        return R.layout.activity_tab_layout
     }
 
-    @Override
-    protected void setToolbar() {
-        mToolbar.setTitle(R.string.tab_layout);
+    override fun setToolbar() {
+        mToolbar.setTitle(R.string.tab_layout)
     }
 
-    @Override
-    protected void initView() {
+    override fun initView() {
         //设置adapter
-        mViewPager.setAdapter(new SimpleFragmentPagerAdapter(getSupportFragmentManager()));
+        view_pager.adapter = SimpleFragmentPagerAdapter(supportFragmentManager)
         //关联viewpager
-        mTabLayout.setupWithViewPager(mViewPager);
+        tab_layout.setupWithViewPager(view_pager)
         //设置图标
-        mTabLayout.getTabAt(0).setIcon(R.mipmap.ic_launcher);
+        tab_layout.getTabAt(0)!!.setIcon(R.mipmap.ic_launcher)
         //设置默认选中
-        mTabLayout.getTabAt(0).select();
+        tab_layout.getTabAt(0)!!.select()
         //设置监听
-        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
+        tab_layout.addOnTabSelectedListener(object : OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
                 //选中
             }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
+            override fun onTabUnselected(tab: TabLayout.Tab) {
                 //未选中
             }
 
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
+            override fun onTabReselected(tab: TabLayout.Tab) {
                 //再次选中
             }
-        });
+        })
     }
 
-    private class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
+    private inner class SimpleFragmentPagerAdapter constructor(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-        private String tabTitles[] = new String[]{"tab1", "tab2", "tab3"};
-        private Fragment[] mFragment = new Fragment[]{new Fragment1(), new Fragment2(), new Fragment3()};
+        private val tabTitles = arrayOf("tab1", "tab2", "tab3")
+        private val mFragment = arrayOf(Fragment1(), Fragment2(), Fragment3())
 
-        private SimpleFragmentPagerAdapter(FragmentManager fm) {
-            super(fm);
+        override fun getItem(position: Int): Fragment {
+            return mFragment[position]
         }
 
-        @Override
-        public Fragment getItem(int position) {
-            return mFragment[position];
+        override fun getCount(): Int {
+            return mFragment.size
         }
 
-        @Override
-        public int getCount() {
-            return mFragment.length;
+        override fun getPageTitle(position: Int): CharSequence? {
+            return tabTitles[position]
         }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return tabTitles[position];
-        }
-
     }
 }

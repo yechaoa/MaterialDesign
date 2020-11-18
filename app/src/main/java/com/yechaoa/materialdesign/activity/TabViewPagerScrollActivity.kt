@@ -1,98 +1,75 @@
-package com.yechaoa.materialdesign.activity;
+package com.yechaoa.materialdesign.activity
 
-import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
+import android.graphics.Color
+import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import com.yechaoa.materialdesign.R
+import com.yechaoa.materialdesign.fragment.Fragment2
+import com.yechaoa.materialdesign.fragment.Fragment4
+import kotlinx.android.synthetic.main.activity_tab_viewpager_scroll.*
 
-import com.yechaoa.materialdesign.R;
-import com.yechaoa.materialdesign.fragment.Fragment1;
-import com.yechaoa.materialdesign.fragment.Fragment2;
-import com.yechaoa.materialdesign.fragment.Fragment4;
+class TabViewPagerScrollActivity : AppCompatActivity() {
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_tab_viewpager_scroll)
 
-public class TabViewPagerScrollActivity extends AppCompatActivity {
+        //透明状态栏
+        val decorView: View = window.decorView
+        val option: Int = (View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE)
+        decorView.systemUiVisibility = option
+        window.statusBarColor = Color.TRANSPARENT
 
-    @BindView(R.id.toolbar)
-    Toolbar mToolbar;
-    @BindView(R.id.toolbar_layout)
-    CollapsingToolbarLayout mToolbarLayout;
-    @BindView(R.id.tab_layout)
-    TabLayout mTabLayout;
-    @BindView(R.id.app_bar)
-    AppBarLayout mAppBar;
-    @BindView(R.id.view_pager)
-    ViewPager mViewPager;
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setHomeButtonEnabled(true)
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab_viewpager_scroll);
-        ButterKnife.bind(this);
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-
-        mToolbarLayout.setTitle("TabViewPagerScroll");
-
-        mViewPager.setAdapter(new SimpleFragmentPagerAdapter(getSupportFragmentManager()));
-        mTabLayout.setupWithViewPager(mViewPager);
+        toolbar_layout.title = "TabViewPagerScroll"
+        view_pager.adapter = SimpleFragmentPagerAdapter(supportFragmentManager)
+        tab_layout.setupWithViewPager(view_pager)
     }
 
-    public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
+    inner class SimpleFragmentPagerAdapter constructor(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-        private String tabTitles[] = new String[]{"菜单一", "菜单二"};
-        private Fragment[] mFragment = new Fragment[]{new Fragment4(), new Fragment2()};
+        private val tabTitles = arrayOf("菜单一", "菜单二")
+        private val mFragment = arrayOf(Fragment4(), Fragment2())
 
-        private SimpleFragmentPagerAdapter(FragmentManager fm) {
-            super(fm);
+        override fun getItem(position: Int): Fragment {
+            return mFragment[position]
         }
 
-        @Override
-        public Fragment getItem(int position) {
-            return mFragment[position];
+        override fun getCount(): Int {
+            return mFragment.size
         }
 
-        @Override
-        public int getCount() {
-            return mFragment.length;
+        override fun getPageTitle(position: Int): CharSequence? {
+            return tabTitles[position]
         }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return tabTitles[position];
-        }
-
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_scrolling, menu);
-        return super.onCreateOptionsMenu(menu);
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_scrolling, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            case R.id.action_settings:
-                Toast.makeText(this, "action_settings", Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            R.id.action_settings -> {
+                Toast.makeText(this, "action_settings", Toast.LENGTH_SHORT).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

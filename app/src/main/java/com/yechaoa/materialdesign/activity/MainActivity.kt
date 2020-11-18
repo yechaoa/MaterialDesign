@@ -1,91 +1,77 @@
-package com.yechaoa.materialdesign.activity;
+package com.yechaoa.materialdesign.activity
 
-import android.content.Intent;
-import android.view.Menu;
-import android.view.View;
+import android.content.Intent
+import android.view.Menu
+import com.yechaoa.materialdesign.R
+import kotlinx.android.synthetic.main.activity_main.*
 
-import com.yechaoa.materialdesign.R;
+class MainActivity : ToolbarActivity() {
 
-import butterknife.OnClick;
-
-public class MainActivity extends ToolbarActivity {
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_main;
+    override fun getLayoutId(): Int {
+        return R.layout.activity_main
     }
 
-    @Override
-    protected void setToolbar() {
+    override fun setToolbar() {}
 
-    }
-
-    @Override
-    protected void initView() {
+    override fun initView() {
         //设置返回键图标并处理点击事件
 //        mToolbar.setNavigationIcon(R.mipmap.ic_launcher_round);
 //        mToolbar.setNavigationOnClickListener(null);
 
         //设置返回键不显示
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        supportActionBar!!.setDisplayHomeAsUpEnabled(false)
 
         //回调刷新toolbar的menu，页面初始化或者在需要的时候调用
-        invalidateOptionsMenu();
+        invalidateOptionsMenu()
+
+        setListener()
     }
 
-    @OnClick({R.id.btn_swipe_refresh, R.id.btn_floating_action, R.id.btn_snack_bar, R.id.btn_tab_layout,
-            R.id.btn_card_view, R.id.bottom_navigation, R.id.scrolling_bar, R.id.text_input_layout,
-            R.id.search_view, R.id.tab_layout_custom_view, R.id.drawer_layout})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btn_swipe_refresh:
-                openActivity(SwipeRefreshLayoutActivity.class);
-                break;
-            case R.id.btn_floating_action:
-                openActivity(FloatingActionButtonActivity.class);
-                break;
-            case R.id.btn_snack_bar:
-                openActivity(SnackbarActivity.class);
-                break;
-            case R.id.btn_tab_layout:
-                openActivity(TabLayoutActivity.class);
-                break;
-            case R.id.btn_card_view:
-                openActivity(CardViewActivity.class);
-                break;
-            case R.id.bottom_navigation:
-                //openActivity(MyDialogActivity.class);
-                openActivity(BottomNavigationActivity.class);
-                break;
-            case R.id.scrolling_bar:
-                openActivity(ScrollingActivity.class);
-                break;
-            case R.id.text_input_layout:
-                openActivity(TextInputLayoutActivity.class);
-                break;
-            case R.id.search_view:
-                openActivity(SearchViewActivity.class);
-                break;
-            case R.id.tab_layout_custom_view:
-                openActivity(TabLayoutCustomViewActivity.class);
-                break;
-            case R.id.drawer_layout:
-                openActivity(DrawerLayoutActivity.class);
-                break;
+    private fun setListener() {
+        btn_swipe_refresh.setOnClickListener {
+            openActivity(SwipeRefreshLayoutActivity::class.java)
+        }
+        btn_floating_action.setOnClickListener {
+            openActivity(FloatingActionButtonActivity::class.java)
+        }
+        btn_snack_bar.setOnClickListener {
+            openActivity(SnackbarActivity::class.java)
+        }
+        btn_tab_layout.setOnClickListener {
+            openActivity(TabLayoutActivity::class.java)
+        }
+        btn_card_view.setOnClickListener {
+            openActivity(CardViewActivity::class.java)
+        }
+        bottom_navigation.setOnClickListener {
+            openActivity(BottomNavigationActivity::class.java)
+        }
+        scrolling_bar.setOnClickListener {
+            openActivity(ScrollingActivity::class.java)
+        }
+        text_input_layout.setOnClickListener {
+            openActivity(TextInputLayoutActivity::class.java)
+        }
+        search_view.setOnClickListener {
+            openActivity(SearchViewActivity::class.java)
+        }
+        tab_layout_custom_view.setOnClickListener {
+            openActivity(TabLayoutCustomViewActivity::class.java)
+        }
+        drawer_layout.setOnClickListener {
+            openActivity(DrawerLayoutActivity::class.java)
         }
     }
 
     /**
      * 重写onPrepareOptionsMenu，处理toolbar的menu，此处把搜索按钮去掉
      */
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
         //menu.findItem(R.id.action_search).setVisible(false);
-        return super.onPrepareOptionsMenu(menu);
+        return super.onPrepareOptionsMenu(menu)
     }
 
-    private void openActivity(Class<?> targetActivityClass) {
-        startActivity(new Intent(MainActivity.this, targetActivityClass));
+    private fun openActivity(targetActivityClass: Class<*>) {
+        startActivity(Intent(this@MainActivity, targetActivityClass))
     }
-
 }

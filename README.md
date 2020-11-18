@@ -1,14 +1,24 @@
 # MaterialDesign
 
-![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/scrolling.gif)
-![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/scrolling_tab.gif)
-![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/tab.gif)
-![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/navigation.gif)
-![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/snackbar.gif)
-![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/text.gif)
-![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/swipe.gif)
-![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/search_view.gif)
-![](https://github.com/yechaoa/MaterialDesign/raw/master/gif/drawer.gif)
+![](https://img.shields.io/badge/language-kotlin-orange.svg)
+![](https://img.shields.io/badge/CSDN-yechaoa-green.svg)
+
+# 更新 2020-11-18
+整个项目升级、重构，support转androidX，java转kotlin
+
+
+| <img src="/gif/search_view.gif" width="285"/> | <img src="/gif/drawer.gif" width="285"/> | <img src="/gif/snackbar.gif" width="285"/> |
+| :--: | :--: | :--: |
+| 搜索 | 侧边栏、抽屉 | 底部提示 |
+
+| <img src="/gif/scrolling.gif" width="285"/> | <img src="/gif/scrolling_tab.gif" width="285"/> | <img src="/gif/tab.gif" width="285"/> |
+| :--: | :--: | :--: |
+| 滑动收起 | Tab滑动收起 | 自定义Tab |
+
+| <img src="/gif/navigation.gif" width="285"/> | <img src="/gif/text.gif" width="285"/> | <img src="/gif/swipe.gif" width="285"/> |
+| :--: | :--: | :--: |
+| 底部导航 | 输入框 | 下拉刷新 |
+
 
 * ConstraintLayout
 * CoordinatorLayout
@@ -27,6 +37,7 @@
 * SearchView
 * NavigationView
 * DrawerLayout
+* 等
 
 <br>
 

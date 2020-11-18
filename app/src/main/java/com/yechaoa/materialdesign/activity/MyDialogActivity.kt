@@ -1,34 +1,19 @@
-package com.yechaoa.materialdesign.activity;
+package com.yechaoa.materialdesign.activity
 
-import android.view.View;
-import android.widget.Button;
+import com.yechaoa.materialdesign.R
+import kotlinx.android.synthetic.main.activity_my_dialog.*
 
-import com.yechaoa.materialdesign.R;
+class MyDialogActivity : ToolbarActivity() {
 
-import butterknife.BindView;
-
-public class MyDialogActivity extends ToolbarActivity {
-
-    @BindView(R.id.btn_dialog)
-    Button mBtnDialog;
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_my_dialog;
+    override fun getLayoutId(): Int {
+        return R.layout.activity_my_dialog
     }
 
-    @Override
-    protected void setToolbar() {
-        mToolbar.setTitle("Dialog");
+    override fun setToolbar() {
+        mToolbar.title = "Dialog"
     }
 
-    @Override
-    protected void initView() {
-        mBtnDialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+    override fun initView() {
+        btn_dialog.setOnClickListener { }
     }
 }

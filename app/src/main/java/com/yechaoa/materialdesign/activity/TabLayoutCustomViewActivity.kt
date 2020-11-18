@@ -1,148 +1,115 @@
-package com.yechaoa.materialdesign.activity;
+package com.yechaoa.materialdesign.activity
 
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.view.View;
-import android.widget.TextView;
+import android.view.View
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import com.yechaoa.materialdesign.R
+import com.yechaoa.materialdesign.fragment.Fragment1
+import kotlinx.android.synthetic.main.activity_tab_layout_custom_view.*
+import java.util.*
 
-import com.yechaoa.materialdesign.R;
-import com.yechaoa.materialdesign.fragment.Fragment1;
+class TabLayoutCustomViewActivity : ToolbarActivity() {
 
-import java.util.ArrayList;
-import java.util.List;
+    private val tabs: MutableList<String> = ArrayList()
+    private val tabTimes: MutableList<String> = ArrayList()
+    private val fragments: MutableList<Fragment> = ArrayList()
 
-import butterknife.BindView;
+    private var holder: ViewHolder? = null
 
-public class TabLayoutCustomViewActivity extends ToolbarActivity {
-
-    @BindView(R.id.tab_layout)
-    TabLayout mTabLayout;
-    @BindView(R.id.view_pager)
-    ViewPager mViewPager;
-
-    private List<String> tabs = new ArrayList<>();
-    private List<String> tabTimes = new ArrayList<>();
-    private List<Fragment> fragments = new ArrayList<>();
-    private ViewHolder holder;
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_tab_layout_custom_view;
+    override fun getLayoutId(): Int {
+        return R.layout.activity_tab_layout_custom_view
     }
 
-    @Override
-    protected void setToolbar() {
-        mToolbar.setTitle(R.string.tab_layout_custom_view);
+    override fun setToolbar() {
+        mToolbar.setTitle(R.string.tab_layout_custom_view)
     }
 
-    @Override
-    protected void initView() {
-        tabs.add("已开抢");
-        tabs.add("秒杀中");
-        tabs.add("即将开始");
-        tabs.add("明天开始");
-        tabs.add("后天开始");
-
-        tabTimes.add("22:00");
-        tabTimes.add("22:00");
-        tabTimes.add("22:00");
-        tabTimes.add("22:00");
-        tabTimes.add("22:00");
-
-        fragments.add(new Fragment1());
-        fragments.add(new Fragment1());
-        fragments.add(new Fragment1());
-        fragments.add(new Fragment1());
-        fragments.add(new Fragment1());
-
-        mViewPager.setOffscreenPageLimit(1);
-        mViewPager.setAdapter(new TabAdapter(getSupportFragmentManager()));
-        mTabLayout.setupWithViewPager(mViewPager);
-
-        initTabView();
+    override fun initView() {
+        tabs.add("已开抢")
+        tabs.add("秒杀中")
+        tabs.add("即将开始")
+        tabs.add("明天开始")
+        tabs.add("后天开始")
+        tabTimes.add("22:00")
+        tabTimes.add("22:00")
+        tabTimes.add("22:00")
+        tabTimes.add("22:00")
+        tabTimes.add("22:00")
+        fragments.add(Fragment1())
+        fragments.add(Fragment1())
+        fragments.add(Fragment1())
+        fragments.add(Fragment1())
+        fragments.add(Fragment1())
+        view_pager.offscreenPageLimit = 1
+        view_pager.adapter = TabAdapter(supportFragmentManager)
+        tab_layout.setupWithViewPager(view_pager)
+        initTabView()
     }
 
-    private void initTabView() {
-        holder = null;
-        for (int i = 0; i < tabs.size(); i++) {
+    private fun initTabView() {
+        holder = null
+        for (i in tabs.indices) {
             //获取tab
-            TabLayout.Tab tab = mTabLayout.getTabAt(i);
+            val tab = tab_layout!!.getTabAt(i)
             //给tab设置自定义布局
-            tab.setCustomView(R.layout.tab_item);
-            holder = new ViewHolder(tab.getCustomView());
+            tab!!.setCustomView(R.layout.tab_item)
+            holder = ViewHolder(tab.customView!!)
             //填充数据
-            holder.mTabItemTime.setText(String.valueOf(tabTimes.get(i)));
-            holder.mTabItemName.setText(tabs.get(i));
+            holder!!.mTabItemTime.text = tabTimes[i]
+            holder!!.mTabItemName.text = tabs[i]
             //默认选择第一项
             if (i == 0) {
-                holder.mTabItemTime.setSelected(true);
-                holder.mTabItemName.setSelected(true);
-                holder.mTabItemTime.setTextSize(18);
-                holder.mTabItemName.setTextSize(12);
+                holder!!.mTabItemTime.isSelected = true
+                holder!!.mTabItemName.isSelected = true
+                holder!!.mTabItemTime.textSize = 18f
+                holder!!.mTabItemName.textSize = 12f
             }
         }
-
-        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                holder = new ViewHolder(tab.getCustomView());
-                holder.mTabItemTime.setSelected(true);
-                holder.mTabItemName.setSelected(true);
+        tab_layout!!.addOnTabSelectedListener(object : OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                holder = ViewHolder(tab.customView!!)
+                holder!!.mTabItemTime.isSelected = true
+                holder!!.mTabItemName.isSelected = true
                 //设置选中后的字体大小
-                holder.mTabItemTime.setTextSize(18);
-                holder.mTabItemName.setTextSize(12);
+                holder!!.mTabItemTime.textSize = 18f
+                holder!!.mTabItemName.textSize = 12f
                 //关联Viewpager
-                mViewPager.setCurrentItem(tab.getPosition());
+                view_pager!!.currentItem = tab.position
             }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-                holder = new ViewHolder(tab.getCustomView());
-                holder.mTabItemTime.setSelected(false);
-                holder.mTabItemName.setSelected(false);
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+                holder = ViewHolder(tab.customView!!)
+                holder!!.mTabItemTime.isSelected = false
+                holder!!.mTabItemName.isSelected = false
                 //恢复默认字体大小
-                holder.mTabItemTime.setTextSize(12);
-                holder.mTabItemName.setTextSize(12);
+                holder!!.mTabItemTime.textSize = 12f
+                holder!!.mTabItemName.textSize = 12f
             }
 
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-            }
-        });
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
     }
 
-    class ViewHolder {
-        TextView mTabItemTime;
-        TextView mTabItemName;
-
-        ViewHolder(View tabView) {
-            mTabItemTime = (TextView) tabView.findViewById(R.id.tab_item_time);
-            mTabItemName = (TextView) tabView.findViewById(R.id.tab_item_name);
-        }
+    internal inner class ViewHolder(tabView: View) {
+        var mTabItemTime: TextView = tabView.findViewById<View>(R.id.tab_item_time) as TextView
+        var mTabItemName: TextView = tabView.findViewById<View>(R.id.tab_item_name) as TextView
     }
 
-    class TabAdapter extends FragmentPagerAdapter {
-
-        TabAdapter(FragmentManager fm) {
-            super(fm);
+    internal inner class TabAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+        override fun getItem(position: Int): Fragment {
+            return fragments[position]
         }
 
-        @Override
-        public Fragment getItem(int position) {
-            return fragments.get(position);
+        override fun getCount(): Int {
+            return fragments.size
         }
 
-        @Override
-        public int getCount() {
-            return fragments.size();
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return tabs.get(position);
+        override fun getPageTitle(position: Int): CharSequence? {
+            return tabs[position]
         }
     }
 }
