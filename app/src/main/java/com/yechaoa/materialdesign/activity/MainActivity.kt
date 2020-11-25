@@ -61,6 +61,9 @@ class MainActivity : ToolbarActivity() {
         drawer_layout.setOnClickListener {
             openActivity(DrawerLayoutActivity::class.java)
         }
+        bottom_sheet.setOnClickListener {
+            openActivity(BottomSheetActivity::class.java)
+        }
     }
 
     /**

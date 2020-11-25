@@ -19,6 +19,9 @@
 | :--: | :--: | :--: |
 | 底部导航 | 输入框 | 下拉刷新 |
 
+| <img src="/gif/bottom_sheet.gif" width="285"/> |
+| :--: |
+| 底部弹窗 |
 
 * ConstraintLayout
 * CoordinatorLayout
@@ -37,6 +40,7 @@
 * SearchView
 * NavigationView
 * DrawerLayout
+* BottomSheetDialog
 * 等
 
 <br>

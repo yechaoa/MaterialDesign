@@ -18,6 +18,7 @@
     <string name="search_view">SearchView</string>
     <string name="tab_layout_custom_view">TabLayoutCustomViewActivity</string>
     <string name="drawer_layout">DrawerLayoutActivity</string>
+    <string name="bottom_sheet">BottomSheetActivity</string>
 
     <string name="pull_to_refresh">下拉开始刷新</string>
     <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>

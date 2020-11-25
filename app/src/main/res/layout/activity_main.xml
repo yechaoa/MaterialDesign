@@ -37,10 +37,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/swipe_refresh_layout"
-                android:textAllCaps="false"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/include"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btn_floating_action"
@@ -50,10 +47,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/floating_action_button"
-                android:textAllCaps="false"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_swipe_refresh"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btn_snack_bar"
@@ -63,10 +57,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/snack_bar"
-                android:textAllCaps="false"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_floating_action"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btn_tab_layout"
@@ -76,10 +67,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/tab_layout"
-                android:textAllCaps="false"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_snack_bar"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btn_card_view"
@@ -89,10 +77,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/card_view"
-                android:textAllCaps="false"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_tab_layout"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/bottom_navigation"
@@ -102,10 +87,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/bottom_navigation"
-                android:textAllCaps="false"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_card_view"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/scrolling_bar"
@@ -115,10 +97,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/scrolling_bar"
-                android:textAllCaps="false"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bottom_navigation"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/text_input_layout"
@@ -128,10 +107,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/text_input_layout"
-                android:textAllCaps="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/scrolling_bar"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/search_view"
@@ -141,10 +117,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/search_view"
-                android:textAllCaps="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_input_layout"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/tab_layout_custom_view"
@@ -154,10 +127,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/tab_layout_custom_view"
-                android:textAllCaps="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/search_view"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/drawer_layout"
@@ -167,10 +137,17 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/drawer_layout"
-                android:textAllCaps="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tab_layout_custom_view"/>
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bottom_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/bottom_sheet"
+                android:textAllCaps="false" />
 
         </LinearLayout>
 
