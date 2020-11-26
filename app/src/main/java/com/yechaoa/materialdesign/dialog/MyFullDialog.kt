@@ -3,15 +3,12 @@ package com.yechaoa.materialdesign.dialog
 import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.FrameLayout
-import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.yechaoa.materialdesign.R
@@ -61,12 +58,17 @@ class MyFullDialog : BottomSheetDialogFragment() {
 
         behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
-                when(newState){
-                    BottomSheetBehavior.STATE_EXPANDED->{}
-                    BottomSheetBehavior.STATE_COLLAPSED->{}
-                    BottomSheetBehavior.STATE_DRAGGING->{}
-                    BottomSheetBehavior.STATE_SETTLING->{}
-                    BottomSheetBehavior.STATE_HIDDEN->{}
+                when (newState) {
+                    BottomSheetBehavior.STATE_EXPANDED -> {
+                    }
+                    BottomSheetBehavior.STATE_COLLAPSED -> {
+                    }
+                    BottomSheetBehavior.STATE_DRAGGING -> {
+                    }
+                    BottomSheetBehavior.STATE_SETTLING -> {
+                    }
+                    BottomSheetBehavior.STATE_HIDDEN -> {
+                    }
                 }
             }
 
