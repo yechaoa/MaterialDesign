@@ -3,8 +3,9 @@
 ![](https://img.shields.io/badge/language-kotlin-orange.svg)
 ![](https://img.shields.io/badge/CSDN-yechaoa-green.svg)
 
-# 更新 2020-11-18
-整个项目升级、重构，support转androidX，java转kotlin
+## 更新记录
+- 【2020-12-13】优化，Theme切换到MaterialComponents
+- 【2020-11-18】整个项目升级、重构，support转androidX，java转kotlin
 
 
 | <img src="/gif/search_view.gif" width="285"/> | <img src="/gif/drawer.gif" width="285"/> | <img src="/gif/snackbar.gif" width="285"/> |
