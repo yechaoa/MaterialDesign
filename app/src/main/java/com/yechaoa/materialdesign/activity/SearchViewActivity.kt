@@ -17,12 +17,12 @@ class SearchViewActivity : ToolbarActivity() {
         return R.layout.activity_search_view
     }
 
-
     override fun setToolbar() {
         mToolbar.setTitle(R.string.search_view)
     }
 
     override fun initView() {}
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         //引用menu文件

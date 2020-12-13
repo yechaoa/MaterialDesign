@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -10,8 +10,6 @@
 
     <!--修改字体和图标的颜色-->
     <style name="AppTheme.ToolBar" parent="AppTheme">
-        <!--<item name="android:windowActionBarOverlay">@style/ActionButton.Overflow</item>
-        <item name="actionOverflowButtonStyle">@style/ActionButton.Overflow</item>-->
         <item name="titleTextColor">@color/white</item>
         <item name="colorControlNormal">@color/white</item>
         <item name="actionOverflowMenuStyle">@style/PopupMenu.Overflow</item>
@@ -35,13 +33,6 @@
     <!--Floating label text style-->
     <style name="MyHintText" parent="TextAppearance.AppCompat.Small">
         <item name="android:textColor">@color/colorPrimary</item>
-    </style>
-
-    <!--Input field style-->
-    <style name="MyEditText" parent="Theme.AppCompat.Light">
-        <item name="colorControlNormal">@color/gray</item>
-        <item name="colorControlActivated">@color/colorPrimary</item>
-        <item name="android:textSize">18sp</item>
     </style>
 
     <!--Error label text style-->

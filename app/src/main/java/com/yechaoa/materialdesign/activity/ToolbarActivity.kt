@@ -16,15 +16,13 @@ abstract class ToolbarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
         mToolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(mToolbar)
 
-        //显示返回键并设置可用
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setHomeButtonEnabled(true)
+        mToolbar.setNavigationOnClickListener {
+            finish()
+        }
 
         //mToolbar.inflateMenu(R.menu.menu_toolbar);
-        //自定义返回键icon
-        //mToolbar.setNavigationIcon(R.drawable.ic_back);
+
         setToolbar()
         initView()
     }

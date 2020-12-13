@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.yechaoa.materialdesign.activity.ScrollingActivity"
-    tools:showIn="@layout/activity_scrolling">
+    tools:context="com.yechaoa.materialdesign.activity.CollapsingToolbarActivity"
+    tools:showIn="@layout/activity_collapsing_toolbar">
 
     <!--app:layout_behavior属性触发滑动效果，前提是内容区是可滑动的-->
 

@@ -13,21 +13,19 @@
     <string name="snack_bar">Snackbar</string>
     <string name="tab_layout">TabLayout</string>
     <string name="bottom_navigation">BottomNavigation</string>
-    <string name="scrolling_bar">ScrollingActivity</string>
-    <string name="text_input_layout">TextInputLayoutActivity</string>
+    <string name="collapsing_toolbar">CollapsingToolbar</string>
+    <string name="text_input_layout">TextInputLayout</string>
     <string name="search_view">SearchView</string>
-    <string name="tab_layout_custom_view">TabLayoutCustomViewActivity</string>
-    <string name="drawer_layout">DrawerLayoutActivity</string>
-    <string name="bottom_sheet">BottomSheetActivity</string>
+    <string name="tab_layout_custom_view">TabLayoutCustomView</string>
+    <string name="drawer_layout">DrawerLayout</string>
+    <string name="bottom_sheet">BottomSheet</string>
 
     <string name="pull_to_refresh">下拉开始刷新</string>
-    <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
 
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_test">Test</string>
-    <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

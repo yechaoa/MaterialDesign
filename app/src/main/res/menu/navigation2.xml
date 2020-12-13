@@ -18,7 +18,7 @@
 
     <item
         android:id="@+id/navigation_test"
-        android:icon="@drawable/ic_back"
+        android:icon="@mipmap/ic_back"
         android:title="@string/title_test"/>
 
 </menu>

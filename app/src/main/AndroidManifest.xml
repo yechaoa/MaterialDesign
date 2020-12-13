@@ -22,15 +22,13 @@
         <activity android:name=".activity.TabLayoutActivity" />
         <activity android:name=".activity.CardViewActivity" />
         <activity android:name=".activity.MyDialogActivity" />
+        <activity android:name=".activity.BottomNavigationActivity" />
         <activity
-            android:name=".activity.BottomNavigationActivity"
-            android:label="@string/title_activity_bottom_navigation" />
-        <activity
-            android:name=".activity.ScrollingActivity"
-            android:label="@string/title_activity_scrolling" />
+            android:name=".activity.CollapsingToolbarActivity"
+            android:label="@string/collapsing_toolbar" />
         <activity
             android:name=".activity.TabViewPagerScrollActivity"
-            android:label="@string/title_activity_scrolling" />
+            android:label="@string/collapsing_toolbar" />
         <activity android:name=".activity.TextInputLayoutActivity" />
         <activity android:name=".activity.SearchViewActivity"/>
         <activity android:name=".activity.TabLayoutCustomViewActivity"/>

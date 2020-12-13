@@ -7,17 +7,16 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.yechaoa.materialdesign.R
-import kotlinx.android.synthetic.main.activity_scrolling.*
+import kotlinx.android.synthetic.main.activity_collapsing_toolbar.*
 
-class ScrollingActivity : AppCompatActivity() {
+class CollapsingToolbarActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_scrolling)
+        setContentView(R.layout.activity_collapsing_toolbar)
 
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
@@ -43,7 +42,7 @@ class ScrollingActivity : AppCompatActivity() {
                 true
             }
             R.id.action_settings -> {
-                startActivity(Intent(this@ScrollingActivity, TabViewPagerScrollActivity::class.java))
+                startActivity(Intent(this@CollapsingToolbarActivity, TabViewPagerScrollActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)

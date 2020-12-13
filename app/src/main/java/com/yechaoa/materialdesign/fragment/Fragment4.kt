@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.yechaoa.materialdesign.R
 import com.yechaoa.materialdesign.adapter.StringAdapter
 import kotlinx.android.synthetic.main.fragment_fragment4.*
-import java.util.*
 
 class Fragment4 : Fragment() {
 
@@ -21,7 +20,6 @@ class Fragment4 : Fragment() {
     }
 
     private fun initData() {
-        mList = ArrayList()
         for (i in 0..19) {
             mList.add("MaterialDesign$i")
         }
