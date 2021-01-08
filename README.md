@@ -20,9 +20,9 @@
 | :--: | :--: | :--: |
 | 底部导航 | 输入框 | 下拉刷新 |
 
-| <img src="/gif/bottom_sheet.gif" width="285"/> |
-| :--: |
-| 底部弹窗 |
+| <img src="/gif/bottom_sheet.gif" width="285"/> | <img src="/gif/tab_layout.gif" width="285"/> |
+| :--: | :--: |
+| 底部弹窗 | TabLayout |
 
 * ConstraintLayout
 * CoordinatorLayout

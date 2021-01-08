@@ -58,4 +58,12 @@
         <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
         <item name="android:backgroundDimEnabled">false</item>
     </style>
+
+    <!--TabLayout字体大小-->
+    <style name="MyTabLayout">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
 </resources>
