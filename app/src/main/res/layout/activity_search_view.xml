@@ -18,7 +18,8 @@
         android:layout_margin="@dimen/text_margin"
         android:text="@string/large_text"
         android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

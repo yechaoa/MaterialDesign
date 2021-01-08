@@ -21,7 +21,24 @@ abstract class ToolbarActivity : AppCompatActivity() {
             finish()
         }
 
-        //mToolbar.inflateMenu(R.menu.menu_toolbar);
+        /**
+         * 引入toolbar上的menu
+         * androidx以后onCreateOptionsMenu中引入的方式失效
+         * 因为是独立的使用，而不是作为ActionBar来使用，所以要用Toolbar的方式引用及监听
+         */
+        mToolbar.inflateMenu(R.menu.menu_toolbar);
+
+        mToolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_share -> {
+                    Toast.makeText(this, "分享", Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    Toast.makeText(this, "设置", Toast.LENGTH_SHORT).show()
+                }
+            }
+            return@setOnMenuItemClickListener true
+        }
 
         setToolbar()
         initView()
@@ -31,16 +48,17 @@ abstract class ToolbarActivity : AppCompatActivity() {
     protected abstract fun setToolbar()
     protected abstract fun initView()
 
+
     /**
-     * 引入toolbar上的menu
+     * 引入toolbar上的menu(作为ActionBar使用的引入方式)
      */
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_toolbar, menu)
+        //menuInflater.inflate(R.menu.menu_toolbar, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     /**
-     * toolbar上menu的事件处理
+     * toolbar上menu的事件处理(作为ActionBar使用的监听方式)
      */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {

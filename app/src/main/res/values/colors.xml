@@ -10,6 +10,7 @@
     <color name="orange">#FF8C00</color>
     <color name="black">#333</color>
     <color name="gray">#808080</color>
+    <color name="color_DCDCDC">#DCDCDC</color>
     <color name="translucent">#66000000</color>
     <color name="transparent">#00000000</color>
 </resources>

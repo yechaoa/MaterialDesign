@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/CSDN-yechaoa-green.svg)
 
 ## 更新记录
-- 【2021-01-08】TabLayout的使用细节
+- 【2021-01-08】TabLayout的使用细节、SearchView的调整适配
 - 【2020-12-13】优化，Theme切换到MaterialComponents
 - 【2020-11-18】整个项目升级、重构，support转androidX，java转kotlin
 

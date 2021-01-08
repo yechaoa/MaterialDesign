@@ -21,7 +21,10 @@ class SearchViewActivity : ToolbarActivity() {
         mToolbar.setTitle(R.string.search_view)
     }
 
-    override fun initView() {}
+    override fun initView() {
+        mToolbar.contentInsetStartWithNavigation = 0
+        setSupportActionBar(mToolbar)
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -46,13 +49,13 @@ class SearchViewActivity : ToolbarActivity() {
         //设置提示词
         mSearchView.queryHint = "请输入关键字"
         //设置输入框文字颜色
-        val editText = mSearchView.findViewById<View>(R.id.search_src_text) as EditText
-        editText.setHintTextColor(ContextCompat.getColor(this, R.color.white))
+        val editText = mSearchView.findViewById<EditText>(R.id.search_src_text)
+        editText.setHintTextColor(ContextCompat.getColor(this, R.color.color_DCDCDC))
         editText.setTextColor(ContextCompat.getColor(this, R.color.white))
 
         // 设置搜索文本监听
         mSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            // 当点击搜索按钮时触发该方法
+            // 当内容不为空，点击搜索按钮时触发该方法
             override fun onQueryTextSubmit(query: String): Boolean {
                 Snackbar.make(constraint_layout, "搜索内容===$query", Snackbar.LENGTH_SHORT).show()
 
