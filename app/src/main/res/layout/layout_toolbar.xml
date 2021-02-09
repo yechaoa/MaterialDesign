@@ -11,6 +11,7 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/AppTheme.ToolBar"
+        app:menu="@menu/menu_toolbar"
         app:navigationIcon="@mipmap/ic_back"
         app:title="@string/app_name"
         app:titleTextColor="@color/white" />
