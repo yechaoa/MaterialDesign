@@ -1,5 +1,6 @@
 package com.yechaoa.materialdesign.activity
 
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -26,6 +27,8 @@ class TabLayoutActivity : ToolbarActivity() {
         view_pager.adapter = SimpleFragmentPagerAdapter(supportFragmentManager)
         //关联viewpager
         tab_layout.setupWithViewPager(view_pager)
+        tab_layout2.setupWithViewPager(view_pager)
+        tab_layout3.setupWithViewPager(view_pager)
         //设置图标
         tab_layout.getTabAt(0)!!.setIcon(R.mipmap.ic_launcher)
         //设置默认选中
@@ -34,6 +37,9 @@ class TabLayoutActivity : ToolbarActivity() {
         tab_layout.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 //选中
+                if (tab.position == 1) {
+                    Toast.makeText(this@TabLayoutActivity, "选中了第2个tab", Toast.LENGTH_SHORT).show()
+                }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {
@@ -48,7 +54,7 @@ class TabLayoutActivity : ToolbarActivity() {
 
     private inner class SimpleFragmentPagerAdapter constructor(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-        private val tabTitles = arrayOf("tab1", "tab2", "tab3")
+        private val tabTitles = arrayOf("Tab1", "Tab2", "Tab3")
         private val mFragment = arrayOf(Fragment1(), Fragment2(), Fragment3())
 
         override fun getItem(position: Int): Fragment {
@@ -59,7 +65,7 @@ class TabLayoutActivity : ToolbarActivity() {
             return mFragment.size
         }
 
-        override fun getPageTitle(position: Int): CharSequence? {
+        override fun getPageTitle(position: Int): CharSequence {
             return tabTitles[position]
         }
     }
