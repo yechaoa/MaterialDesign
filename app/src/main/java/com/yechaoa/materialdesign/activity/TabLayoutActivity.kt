@@ -7,15 +7,15 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.yechaoa.materialdesign.R
+import com.yechaoa.materialdesign.databinding.ActivityTabLayoutBinding
 import com.yechaoa.materialdesign.fragment.Fragment1
 import com.yechaoa.materialdesign.fragment.Fragment2
 import com.yechaoa.materialdesign.fragment.Fragment3
-import kotlinx.android.synthetic.main.activity_tab_layout.*
 
-class TabLayoutActivity : ToolbarActivity() {
+class TabLayoutActivity : ToolbarActivity<ActivityTabLayoutBinding>() {
 
-    override fun getLayoutId(): Int {
-        return R.layout.activity_tab_layout
+    override fun getViewBinding(): ActivityTabLayoutBinding {
+        return ActivityTabLayoutBinding.inflate(layoutInflater)
     }
 
     override fun setToolbar() {
@@ -24,17 +24,17 @@ class TabLayoutActivity : ToolbarActivity() {
 
     override fun initView() {
         //设置adapter
-        view_pager.adapter = SimpleFragmentPagerAdapter(supportFragmentManager)
+        mBinding.viewPager.adapter = SimpleFragmentPagerAdapter(supportFragmentManager)
         //关联viewpager
-        tab_layout.setupWithViewPager(view_pager)
-        tab_layout2.setupWithViewPager(view_pager)
-        tab_layout3.setupWithViewPager(view_pager)
+        mBinding.tabLayout.setupWithViewPager(mBinding.viewPager)
+        mBinding.tabLayout2.setupWithViewPager(mBinding.viewPager)
+        mBinding.tabLayout3.setupWithViewPager(mBinding.viewPager)
         //设置图标
-        tab_layout.getTabAt(0)!!.setIcon(R.mipmap.ic_launcher)
+        mBinding.tabLayout.getTabAt(0)!!.setIcon(R.mipmap.ic_launcher)
         //设置默认选中
-        tab_layout.getTabAt(0)!!.select()
+        mBinding.tabLayout.getTabAt(0)!!.select()
         //设置监听
-        tab_layout.addOnTabSelectedListener(object : OnTabSelectedListener {
+        mBinding.tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 //选中
                 if (tab.position == 1) {
@@ -52,7 +52,8 @@ class TabLayoutActivity : ToolbarActivity() {
         })
     }
 
-    private inner class SimpleFragmentPagerAdapter constructor(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+    private inner class SimpleFragmentPagerAdapter constructor(fm: FragmentManager) :
+        FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
         private val tabTitles = arrayOf("Tab1", "Tab2", "Tab3")
         private val mFragment = arrayOf(Fragment1(), Fragment2(), Fragment3())
@@ -69,4 +70,5 @@ class TabLayoutActivity : ToolbarActivity() {
             return tabTitles[position]
         }
     }
+
 }

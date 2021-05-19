@@ -1,12 +1,12 @@
 package com.yechaoa.materialdesign.activity
 
 import com.yechaoa.materialdesign.R
-import kotlinx.android.synthetic.main.activity_floating_action_button.*
+import com.yechaoa.materialdesign.databinding.ActivityFloatingActionButtonBinding
 
-class FloatingActionButtonActivity : ToolbarActivity() {
+class FloatingActionButtonActivity : ToolbarActivity<ActivityFloatingActionButtonBinding>() {
 
-    override fun getLayoutId(): Int {
-        return R.layout.activity_floating_action_button
+    override fun getViewBinding(): ActivityFloatingActionButtonBinding {
+        return ActivityFloatingActionButtonBinding.inflate(layoutInflater)
     }
 
     override fun setToolbar() {
@@ -14,8 +14,9 @@ class FloatingActionButtonActivity : ToolbarActivity() {
     }
 
     override fun initView() {
-        floating_button.setOnClickListener {
+        mBinding.floatingButton.setOnClickListener {
             finish()
         }
     }
+
 }

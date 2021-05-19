@@ -6,17 +6,15 @@ import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yechaoa.materialdesign.R
 import com.yechaoa.materialdesign.adapter.MainAdapter
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.recycleView
-import kotlinx.android.synthetic.main.fragment_fragment4.*
+import com.yechaoa.materialdesign.databinding.ActivityMainBinding
 
-class MainActivity : ToolbarActivity() {
+class MainActivity : ToolbarActivity<ActivityMainBinding>() {
 
     private var mList: MutableList<String> = mutableListOf()
     private lateinit var mAdapter: MainAdapter
 
-    override fun getLayoutId(): Int {
-        return R.layout.activity_main
+    override fun getViewBinding(): ActivityMainBinding {
+        return ActivityMainBinding.inflate(layoutInflater)
     }
 
     override fun setToolbar() {}
@@ -40,9 +38,9 @@ class MainActivity : ToolbarActivity() {
         mList.add(getString(R.string.drawer_layout))
         mList.add(getString(R.string.bottom_sheet))
 
-        recycleView.layoutManager = GridLayoutManager(this, 2)
+        mBinding.recycleView.layoutManager = GridLayoutManager(this, 2)
         mAdapter = MainAdapter(this, mList)
-        recycleView.adapter = mAdapter
+        mBinding.recycleView.adapter = mAdapter
 
         setListener()
     }
@@ -79,4 +77,5 @@ class MainActivity : ToolbarActivity() {
     private fun openActivity(targetActivityClass: Class<*>) {
         startActivity(Intent(this@MainActivity, targetActivityClass))
     }
+
 }

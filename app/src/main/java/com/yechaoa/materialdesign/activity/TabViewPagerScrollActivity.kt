@@ -11,15 +11,18 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.yechaoa.materialdesign.R
+import com.yechaoa.materialdesign.databinding.ActivityTabViewpagerScrollBinding
 import com.yechaoa.materialdesign.fragment.Fragment2
 import com.yechaoa.materialdesign.fragment.Fragment4
-import kotlinx.android.synthetic.main.activity_tab_viewpager_scroll.*
 
 class TabViewPagerScrollActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityTabViewpagerScrollBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tab_viewpager_scroll)
+        binding = ActivityTabViewpagerScrollBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //透明状态栏
         val decorView: View = window.decorView
@@ -27,16 +30,17 @@ class TabViewPagerScrollActivity : AppCompatActivity() {
         decorView.systemUiVisibility = option
         window.statusBarColor = Color.TRANSPARENT
 
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeButtonEnabled(true)
 
-        toolbar_layout.title = "TabViewPagerScroll"
-        view_pager.adapter = SimpleFragmentPagerAdapter(supportFragmentManager)
-        tab_layout.setupWithViewPager(view_pager)
+        binding.toolbarLayout.title = "TabViewPagerScroll"
+        binding.viewPager.adapter = SimpleFragmentPagerAdapter(supportFragmentManager)
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
     }
 
-    inner class SimpleFragmentPagerAdapter constructor(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+    inner class SimpleFragmentPagerAdapter constructor(fm: FragmentManager) :
+        FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
         private val tabTitles = arrayOf("菜单一", "菜单二")
         private val mFragment = arrayOf(Fragment4(), Fragment2())

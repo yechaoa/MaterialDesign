@@ -4,14 +4,15 @@ import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.FrameLayout
-import com.google.android.material.bottomsheet.BottomSheetBehavior
+import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.yechaoa.materialdesign.R
-import kotlinx.android.synthetic.main.dialog_my_bottom_sheet.view.*
+import com.yechaoa.materialdesign.databinding.DialogMyBottomSheetBinding
 
 
 class MyBottomSheetDialog : BottomSheetDialogFragment() {
+
+    private lateinit var binding: DialogMyBottomSheetBinding
 
     /**
      * setStyle 圆角效果
@@ -21,17 +22,15 @@ class MyBottomSheetDialog : BottomSheetDialogFragment() {
         setStyle(STYLE_NORMAL, R.style.BottomSheetDialog)
     }
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val dialog = super.onCreateDialog(savedInstanceState)
-        val view = LayoutInflater.from(context).inflate(R.layout.dialog_my_bottom_sheet, null)
-        dialog.setContentView(view)
-        initView(view)
-        return dialog
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = DialogMyBottomSheetBinding.inflate(inflater)
+        initView()
+        return binding.root
     }
 
-    private fun initView(rootView: View) {
+    private fun initView() {
         //do something
-        rootView.tv_cancel.setOnClickListener { dismiss() }
+        binding.tvCancel.setOnClickListener { dismiss() }
     }
 
     /**

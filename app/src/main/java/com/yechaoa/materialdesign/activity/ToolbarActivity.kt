@@ -4,15 +4,18 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.viewbinding.ViewBinding
 import com.yechaoa.materialdesign.R
 
-abstract class ToolbarActivity : AppCompatActivity() {
+abstract class ToolbarActivity<VB : ViewBinding> : AppCompatActivity() {
 
-    lateinit var mToolbar: Toolbar
+    protected open lateinit var mBinding: VB
+    protected open lateinit var mToolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(getLayoutId())
+        mBinding = getViewBinding()
+        setContentView(mBinding.root)
         mToolbar = findViewById(R.id.toolbar)
 
         setListener()
@@ -45,7 +48,7 @@ abstract class ToolbarActivity : AppCompatActivity() {
         }
     }
 
-    protected abstract fun getLayoutId(): Int
+    protected abstract fun getViewBinding(): VB
     protected abstract fun setToolbar()
     protected abstract fun initView()
 

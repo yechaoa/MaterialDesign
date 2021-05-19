@@ -9,24 +9,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
 import com.yechaoa.materialdesign.R
-import kotlinx.android.synthetic.main.activity_collapsing_toolbar.*
+import com.yechaoa.materialdesign.databinding.ActivityCollapsingToolbarBinding
 
 class CollapsingToolbarActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityCollapsingToolbarBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setContentView(R.layout.activity_collapsing_toolbar)
+        binding = ActivityCollapsingToolbarBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeButtonEnabled(true)
-
-        fab.setOnClickListener { view ->
+        binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+                .setAction("Action", null).show()
         }
     }
 

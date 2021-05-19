@@ -8,11 +8,11 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.yechaoa.materialdesign.R
+import com.yechaoa.materialdesign.databinding.ActivityTabLayoutCustomViewBinding
 import com.yechaoa.materialdesign.fragment.Fragment1
-import kotlinx.android.synthetic.main.activity_tab_layout_custom_view.*
 import java.util.*
 
-class TabLayoutCustomViewActivity : ToolbarActivity() {
+class TabLayoutCustomViewActivity : ToolbarActivity<ActivityTabLayoutCustomViewBinding>() {
 
     private val tabs: MutableList<String> = ArrayList()
     private val tabTimes: MutableList<String> = ArrayList()
@@ -20,8 +20,8 @@ class TabLayoutCustomViewActivity : ToolbarActivity() {
 
     private var holder: ViewHolder? = null
 
-    override fun getLayoutId(): Int {
-        return R.layout.activity_tab_layout_custom_view
+    override fun getViewBinding(): ActivityTabLayoutCustomViewBinding {
+        return ActivityTabLayoutCustomViewBinding.inflate(layoutInflater)
     }
 
     override fun setToolbar() {
@@ -44,9 +44,9 @@ class TabLayoutCustomViewActivity : ToolbarActivity() {
         fragments.add(Fragment1())
         fragments.add(Fragment1())
         fragments.add(Fragment1())
-        view_pager.offscreenPageLimit = 1
-        view_pager.adapter = TabAdapter(supportFragmentManager)
-        tab_layout.setupWithViewPager(view_pager)
+        mBinding.viewPager.offscreenPageLimit = 1
+        mBinding.viewPager.adapter = TabAdapter(supportFragmentManager)
+        mBinding.tabLayout.setupWithViewPager(mBinding.viewPager)
         initTabView()
     }
 
@@ -54,7 +54,7 @@ class TabLayoutCustomViewActivity : ToolbarActivity() {
         holder = null
         for (i in tabs.indices) {
             //获取tab
-            val tab = tab_layout!!.getTabAt(i)
+            val tab = mBinding.tabLayout.getTabAt(i)
             //给tab设置自定义布局
             tab!!.setCustomView(R.layout.tab_item)
             holder = ViewHolder(tab.customView!!)
@@ -69,7 +69,7 @@ class TabLayoutCustomViewActivity : ToolbarActivity() {
                 holder!!.mTabItemName.textSize = 12f
             }
         }
-        tab_layout!!.addOnTabSelectedListener(object : OnTabSelectedListener {
+        mBinding.tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 holder = ViewHolder(tab.customView!!)
                 holder!!.mTabItemTime.isSelected = true
@@ -78,7 +78,7 @@ class TabLayoutCustomViewActivity : ToolbarActivity() {
                 holder!!.mTabItemTime.textSize = 18f
                 holder!!.mTabItemName.textSize = 12f
                 //关联Viewpager
-                view_pager!!.currentItem = tab.position
+                mBinding.viewPager.currentItem = tab.position
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {
@@ -99,7 +99,8 @@ class TabLayoutCustomViewActivity : ToolbarActivity() {
         var mTabItemName: TextView = tabView.findViewById<View>(R.id.tab_item_name) as TextView
     }
 
-    internal inner class TabAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+    internal inner class TabAdapter(fm: FragmentManager) :
+        FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
         override fun getItem(position: Int): Fragment {
             return fragments[position]
         }
@@ -108,8 +109,9 @@ class TabLayoutCustomViewActivity : ToolbarActivity() {
             return fragments.size
         }
 
-        override fun getPageTitle(position: Int): CharSequence? {
+        override fun getPageTitle(position: Int): CharSequence {
             return tabs[position]
         }
     }
+
 }

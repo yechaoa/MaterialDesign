@@ -7,12 +7,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yechaoa.materialdesign.R
-import kotlinx.android.synthetic.main.activity_bottom_navigation.*
+import com.yechaoa.materialdesign.databinding.ActivityBottomNavigationBinding
 
-class BottomNavigationActivity : ToolbarActivity() {
+class BottomNavigationActivity : ToolbarActivity<ActivityBottomNavigationBinding>() {
 
-    override fun getLayoutId(): Int {
-        return R.layout.activity_bottom_navigation
+    override fun getViewBinding(): ActivityBottomNavigationBinding {
+        return ActivityBottomNavigationBinding.inflate(layoutInflater)
     }
 
     override fun setToolbar() {
@@ -20,29 +20,29 @@ class BottomNavigationActivity : ToolbarActivity() {
     }
 
     override fun initView() {
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        navigation2.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        navigation2.selectedItemId = R.id.navigation_dashboard
-        navigation3.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        mBinding.navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        mBinding.navigation2.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        mBinding.navigation2.selectedItemId = R.id.navigation_dashboard
+        mBinding.navigation3.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         setBadge(2, 5)
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                message.setText(R.string.title_home)
+                mBinding.message.setText(R.string.title_home)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                message.setText(R.string.title_dashboard)
+                mBinding.message.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                message.setText(R.string.title_notifications)
+                mBinding.message.setText(R.string.title_notifications)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_test -> {
-                message.setText(R.string.title_test)
+                mBinding.message.setText(R.string.title_test)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -56,7 +56,7 @@ class BottomNavigationActivity : ToolbarActivity() {
      */
     private fun setBadge(index: Int, count: Int) {
         //获取底部菜单view
-        val menuView = navigation3.getChildAt(0) as BottomNavigationMenuView
+        val menuView = mBinding.navigation3.getChildAt(0) as BottomNavigationMenuView
         //获取第2个itemView
         val itemView = menuView.getChildAt(index) as BottomNavigationItemView
         //引入badgeView

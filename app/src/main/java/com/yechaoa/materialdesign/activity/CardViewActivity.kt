@@ -2,12 +2,12 @@ package com.yechaoa.materialdesign.activity
 
 import android.widget.Toast
 import com.yechaoa.materialdesign.R
-import kotlinx.android.synthetic.main.activity_card_view.*
+import com.yechaoa.materialdesign.databinding.ActivityCardViewBinding
 
-class CardViewActivity : ToolbarActivity() {
+class CardViewActivity : ToolbarActivity<ActivityCardViewBinding>() {
 
-    override fun getLayoutId(): Int {
-        return R.layout.activity_card_view
+    override fun getViewBinding(): ActivityCardViewBinding {
+        return ActivityCardViewBinding.inflate(layoutInflater)
     }
 
     override fun setToolbar() {
@@ -15,6 +15,9 @@ class CardViewActivity : ToolbarActivity() {
     }
 
     override fun initView() {
-        cardView.setOnClickListener { Toast.makeText(this@CardViewActivity, "CardView", Toast.LENGTH_SHORT).show() }
+        mBinding.cardView.setOnClickListener {
+            Toast.makeText(this@CardViewActivity, "CardView", Toast.LENGTH_SHORT).show()
+        }
     }
+
 }

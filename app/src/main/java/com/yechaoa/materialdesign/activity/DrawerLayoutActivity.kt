@@ -9,12 +9,13 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
 import com.google.android.material.navigation.NavigationView
 import com.yechaoa.materialdesign.R
-import kotlinx.android.synthetic.main.activity_drawer_layout.*
+import com.yechaoa.materialdesign.databinding.ActivityDrawerLayoutBinding
 
-class DrawerLayoutActivity : ToolbarActivity(), NavigationView.OnNavigationItemSelectedListener {
+class DrawerLayoutActivity : ToolbarActivity<ActivityDrawerLayoutBinding>(),
+    NavigationView.OnNavigationItemSelectedListener {
 
-    override fun getLayoutId(): Int {
-        return R.layout.activity_drawer_layout
+    override fun getViewBinding(): ActivityDrawerLayoutBinding {
+        return ActivityDrawerLayoutBinding.inflate(layoutInflater)
     }
 
     override fun setToolbar() {
@@ -24,14 +25,15 @@ class DrawerLayoutActivity : ToolbarActivity(), NavigationView.OnNavigationItemS
     override fun initView() {
 
         //mDrawerLayout与mToolbar关联起来
-        val actionBarDrawerToggle = ActionBarDrawerToggle(this, drawer_layout, mToolbar, R.string.open, R.string.close)
+        val actionBarDrawerToggle =
+            ActionBarDrawerToggle(this, mBinding.drawerLayout, mToolbar, R.string.open, R.string.close)
         //初始化状态
         actionBarDrawerToggle.syncState()
         //ActionBarDrawerToggle implements DrawerLayout.DrawerListener
-        drawer_layout.addDrawerListener(actionBarDrawerToggle)
+        mBinding.drawerLayout.addDrawerListener(actionBarDrawerToggle)
 
         //监听
-        drawer_layout.addDrawerListener(object : DrawerListener {
+        mBinding.drawerLayout.addDrawerListener(object : DrawerListener {
             override fun onDrawerSlide(view: View, v: Float) {
                 Log.i("---", "滑动中")
             }
@@ -50,19 +52,19 @@ class DrawerLayoutActivity : ToolbarActivity(), NavigationView.OnNavigationItemS
         })
 
         //NavigationView 内容点击事件
-        navigation_view.setNavigationItemSelectedListener(this)
+        mBinding.navigationView.setNavigationItemSelectedListener(this)
 
-        btn_open_left.setOnClickListener {
-            drawer_layout.openDrawer(GravityCompat.START)
+        mBinding.btnOpenLeft.setOnClickListener {
+            mBinding.drawerLayout.openDrawer(GravityCompat.START)
         }
 
-        btn_open_right.setOnClickListener {
-            drawer_layout.openDrawer(GravityCompat.END)
+        mBinding.btnOpenRight.setOnClickListener {
+            mBinding.drawerLayout.openDrawer(GravityCompat.END)
         }
 
         //关闭执行DrawerLayout
-        btn_close_right.setOnClickListener {
-            drawer_layout.closeDrawer(GravityCompat.END)
+        mBinding.btnCloseRight.setOnClickListener {
+            mBinding.drawerLayout.closeDrawer(GravityCompat.END)
         }
     }
 
@@ -71,4 +73,5 @@ class DrawerLayoutActivity : ToolbarActivity(), NavigationView.OnNavigationItemS
         Toast.makeText(this, "点击了----- $title", Toast.LENGTH_SHORT).show()
         return false
     }
+
 }

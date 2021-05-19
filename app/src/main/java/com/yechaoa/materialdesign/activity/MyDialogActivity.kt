@@ -1,12 +1,11 @@
 package com.yechaoa.materialdesign.activity
 
-import com.yechaoa.materialdesign.R
-import kotlinx.android.synthetic.main.activity_my_dialog.*
+import com.yechaoa.materialdesign.databinding.ActivityMyDialogBinding
 
-class MyDialogActivity : ToolbarActivity() {
+class MyDialogActivity : ToolbarActivity<ActivityMyDialogBinding>() {
 
-    override fun getLayoutId(): Int {
-        return R.layout.activity_my_dialog
+    override fun getViewBinding(): ActivityMyDialogBinding {
+        return ActivityMyDialogBinding.inflate(layoutInflater)
     }
 
     override fun setToolbar() {
@@ -14,6 +13,7 @@ class MyDialogActivity : ToolbarActivity() {
     }
 
     override fun initView() {
-        btn_dialog.setOnClickListener { }
+        mBinding.btnDialog.setOnClickListener { }
     }
+
 }

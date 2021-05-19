@@ -9,12 +9,12 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.yechaoa.materialdesign.R
-import kotlinx.android.synthetic.main.activity_search_view.*
+import com.yechaoa.materialdesign.databinding.ActivitySearchViewBinding
 
-class SearchViewActivity : ToolbarActivity() {
+class SearchViewActivity : ToolbarActivity<ActivitySearchViewBinding>() {
 
-    override fun getLayoutId(): Int {
-        return R.layout.activity_search_view
+    override fun getViewBinding(): ActivitySearchViewBinding {
+        return ActivitySearchViewBinding.inflate(layoutInflater)
     }
 
     override fun setToolbar() {
@@ -57,10 +57,10 @@ class SearchViewActivity : ToolbarActivity() {
         mSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             // 当内容不为空，点击搜索按钮时触发该方法
             override fun onQueryTextSubmit(query: String): Boolean {
-                Snackbar.make(constraint_layout, "搜索内容===$query", Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(mBinding.constraintLayout, "搜索内容===$query", Snackbar.LENGTH_SHORT).show()
 
                 //伪搜索
-                search_result!!.visibility = View.VISIBLE
+                mBinding.searchResult.visibility = View.VISIBLE
 
                 //清除焦点，收软键盘
                 //mSearchView.clearFocus();
@@ -71,10 +71,11 @@ class SearchViewActivity : ToolbarActivity() {
             override fun onQueryTextChange(newText: String): Boolean {
                 //do something
                 //当没有输入任何内容的时候清除结果，看实际需求
-                if (TextUtils.isEmpty(newText)) search_result!!.visibility = View.INVISIBLE
+                if (TextUtils.isEmpty(newText)) mBinding.searchResult.visibility = View.INVISIBLE
                 return false
             }
         })
         return super.onCreateOptionsMenu(menu)
     }
+
 }

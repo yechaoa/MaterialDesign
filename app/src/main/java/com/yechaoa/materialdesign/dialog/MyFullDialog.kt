@@ -1,6 +1,5 @@
 package com.yechaoa.materialdesign.dialog
 
-import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
@@ -12,10 +11,11 @@ import android.widget.FrameLayout
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.yechaoa.materialdesign.R
-import kotlinx.android.synthetic.main.dialog_my_full.view.*
-
+import com.yechaoa.materialdesign.databinding.DialogMyFullBinding
 
 class MyFullDialog : BottomSheetDialogFragment() {
+
+    private lateinit var binding: DialogMyFullBinding
 
     /**
      * setStyle 圆角效果
@@ -25,17 +25,15 @@ class MyFullDialog : BottomSheetDialogFragment() {
         setStyle(STYLE_NORMAL, R.style.BottomSheetDialogBg)
     }
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val dialog = super.onCreateDialog(savedInstanceState)
-        val view = LayoutInflater.from(context).inflate(R.layout.dialog_my_full, null)
-        dialog.setContentView(view)
-        initView(view)
-        return dialog
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = DialogMyFullBinding.inflate(inflater)
+        initView()
+        return binding.root
     }
 
-    private fun initView(rootView: View) {
+    private fun initView() {
         //do something
-        rootView.iv_close.setOnClickListener {
+        binding.ivClose.setOnClickListener {
             dismiss()
         }
     }
