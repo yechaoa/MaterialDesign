@@ -3,6 +3,7 @@
 
     <string name="search">搜索</string>
     <string name="share">分享</string>
+    <string name="author">yechaoa</string>
     <string name="settings">设置</string>
     <string name="open">打开</string>
     <string name="close">关闭</string>
@@ -19,6 +20,7 @@
     <string name="tab_layout_custom_view">TabLayoutCustomView</string>
     <string name="drawer_layout">DrawerLayout</string>
     <string name="bottom_sheet">BottomSheet</string>
+    <string name="material_button">MaterialButton</string>
 
     <string name="pull_to_refresh">下拉开始刷新</string>
 

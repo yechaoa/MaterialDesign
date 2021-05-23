@@ -24,6 +24,10 @@ class SearchViewActivity : ToolbarActivity<ActivitySearchViewBinding>() {
     override fun initView() {
         mToolbar.contentInsetStartWithNavigation = 0
         setSupportActionBar(mToolbar)
+
+        mToolbar.setNavigationOnClickListener {
+            finish()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -37,6 +37,7 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
         mList.add(getString(R.string.tab_layout_custom_view))
         mList.add(getString(R.string.drawer_layout))
         mList.add(getString(R.string.bottom_sheet))
+        mList.add(getString(R.string.material_button))
 
         mBinding.recycleView.layoutManager = GridLayoutManager(this, 2)
         mAdapter = MainAdapter(this, mList)
@@ -61,6 +62,7 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
                     9 -> openActivity(TabLayoutCustomViewActivity::class.java)
                     10 -> openActivity(DrawerLayoutActivity::class.java)
                     11 -> openActivity(BottomSheetActivity::class.java)
+                    12 -> openActivity(MaterialButtonActivity::class.java)
                 }
             }
         })

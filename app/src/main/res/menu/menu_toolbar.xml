@@ -1,22 +1,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--
-        item的icon和title属性顾名思义，
-        而app:showAsAction属性则是用来指定这个动作是放置在操作栏上，
-        还是溢出菜单中。当它的值设置为”ifRoom”时，如果操作栏有空间放置，
-        则放置在操作栏上，否则放置到溢出菜单中。当它的值设置为”always”，
-        这个动作将总是放置在操作栏上。当它的值设置为”never”，
-        这个动作将总是放置在溢出菜单中。
+        item的icon和title属性顾名思义
+        app:showAsAction:
+        1.never 总是放置在溢出菜单中
+        2.always 总是放置在操作栏上
+        3.ifRoom 如果有空间放置，则放置在操作栏上，否则放置到溢出菜单中。
     -->
+    <item
+        android:id="@+id/menu_author"
+        android:iconTint="@color/white"
+        android:title="@string/author"
+        app:showAsAction="always" />
     <item
         android:id="@+id/menu_share"
         android:icon="@mipmap/ic_launcher"
         android:title="@string/share"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/menu_settings"
         android:icon="@mipmap/ic_launcher"
         android:title="@string/settings"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 </menu>

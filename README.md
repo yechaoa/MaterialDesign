@@ -3,11 +3,10 @@
 ![](https://img.shields.io/badge/language-kotlin-orange.svg)
 ![](https://img.shields.io/badge/CSDN-yechaoa-green.svg)
 
-## 更新记录
+## 近期更新
+- 【2021-05-23】add MaterialButton
 - 【2021-05-19】1.Update AS、Gradle; 2.Migrate ViewBinding
 - 【2021-01-08】TabLayout的使用细节、SearchView的调整适配
-- 【2020-12-13】优化，Theme切换到MaterialComponents
-- 【2020-11-18】整个项目升级、重构，support转androidX，java转kotlin
 
 
 | <img src="/gif/search_view.gif" width="285"/> | <img src="/gif/drawer.gif" width="285"/> | <img src="/gif/snackbar.gif" width="285"/> |
@@ -22,9 +21,9 @@
 | :--: | :--: | :--: |
 | 底部导航 | 输入框 | 下拉刷新 |
 
-| <img src="/gif/bottom_sheet.gif" width="285"/> | <img src="/gif/tab_layout.gif" width="285"/> |
-| :--: | :--: |
-| 底部弹窗 | TabLayout |
+| <img src="/gif/bottom_sheet.gif" width="285"/> | <img src="/gif/tab_layout.gif" width="285"/> | <img src="/gif/material_button.png" width="285"/> |
+| :--: | :--: | :--: |
+| 底部弹窗 | TabLayout | MaterialButton |
 
 * ConstraintLayout
 * CoordinatorLayout
@@ -44,6 +43,7 @@
 * NavigationView
 * DrawerLayout
 * BottomSheetDialog
+* MaterialButton
 * 等
 
 <br>
