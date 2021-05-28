@@ -4,6 +4,7 @@
 ![](https://img.shields.io/badge/CSDN-yechaoa-green.svg)
 
 ## 近期更新
+- 【2021-05-29】add ShapeableImageView
 - 【2021-05-23】add MaterialButton
 - 【2021-05-19】1.Update AS、Gradle; 2.Migrate ViewBinding
 - 【2021-01-08】TabLayout的使用细节、SearchView的调整适配
@@ -25,6 +26,12 @@
 | :--: | :--: | :--: |
 | 底部弹窗 | TabLayout | MaterialButton |
 
+| <img src="/gif/shapeable_image_view.png" width="285"/> |
+| :--: |
+| ShapeableImageView |
+
+
+
 * ConstraintLayout
 * CoordinatorLayout
 * CollapsingToolbarLayout
@@ -44,6 +51,7 @@
 * DrawerLayout
 * BottomSheetDialog
 * MaterialButton
+* ShapeableImageView
 * 等
 
 <br>

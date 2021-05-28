@@ -21,6 +21,7 @@
     <string name="drawer_layout">DrawerLayout</string>
     <string name="bottom_sheet">BottomSheet</string>
     <string name="material_button">MaterialButton</string>
+    <string name="shapeable_image_view">ShapeableImageView</string>
 
     <string name="pull_to_refresh">下拉开始刷新</string>
 

@@ -38,6 +38,7 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
         mList.add(getString(R.string.drawer_layout))
         mList.add(getString(R.string.bottom_sheet))
         mList.add(getString(R.string.material_button))
+        mList.add(getString(R.string.shapeable_image_view))
 
         mBinding.recycleView.layoutManager = GridLayoutManager(this, 2)
         mAdapter = MainAdapter(this, mList)
@@ -63,6 +64,7 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
                     10 -> openActivity(DrawerLayoutActivity::class.java)
                     11 -> openActivity(BottomSheetActivity::class.java)
                     12 -> openActivity(MaterialButtonActivity::class.java)
+                    13 -> openActivity(ShapeableImageViewActivity::class.java)
                 }
             }
         })
