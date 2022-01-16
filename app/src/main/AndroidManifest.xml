@@ -36,6 +36,7 @@
         <activity android:name=".activity.BottomSheetActivity" />
         <activity android:name=".activity.MaterialButtonActivity" />
         <activity android:name=".activity.ShapeableImageViewActivity" />
+        <activity android:name=".activity.BadgeDrawableActivity" />
     </application>
 
 </manifest>

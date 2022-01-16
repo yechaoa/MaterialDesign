@@ -1,18 +1,21 @@
 package com.yechaoa.materialdesign.adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.yechaoa.materialdesign.R
+import java.util.*
 
 /**
  * Created by yechao on 2017/11/15.
  * Describe :
  */
-class MainAdapter(private val mContext: Context?, private val mList: List<String>?) : RecyclerView.Adapter<MainAdapter.ViewHolder>(), View.OnClickListener {
+class MainAdapter(private val mContext: Context, private val mList: List<String>) : RecyclerView.Adapter<MainAdapter.ViewHolder>(),
+    View.OnClickListener {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(mContext).inflate(R.layout.item_main, parent, false)
@@ -21,12 +24,13 @@ class MainAdapter(private val mContext: Context?, private val mList: List<String
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.mItemTextView.text = mList!![position]
+        holder.mItemTextView.setBackgroundColor(randomColor())
+        holder.mItemTextView.text = mList[position]
         holder.mItemTextView.tag = position
     }
 
     override fun getItemCount(): Int {
-        return mList!!.size
+        return mList.size
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -34,19 +38,30 @@ class MainAdapter(private val mContext: Context?, private val mList: List<String
     }
 
     interface OnItemClickListener {
-        fun onItemClick(v: View,position: Int)
+        fun onItemClick(v: View, position: Int)
     }
 
     private var mListener: OnItemClickListener? = null
 
-    fun setOnItemClickListener(listener:OnItemClickListener){
-        mListener=listener
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        mListener = listener
     }
 
     override fun onClick(v: View) {
-        if (mListener!=null){
+        if (mListener != null) {
             mListener?.onItemClick(v, v.tag as Int)
         }
     }
 
+    /**
+     * 随机Color 避免纯色没有从255取值
+     */
+    private fun randomColor(): Int {
+        Random().run {
+            val red = nextInt(210)
+            val green = nextInt(210)
+            val blue = nextInt(210)
+            return Color.rgb(red, green, blue)
+        }
+    }
 }

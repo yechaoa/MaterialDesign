@@ -4,10 +4,9 @@
 ![](https://img.shields.io/badge/CSDN-yechaoa-green.svg)
 
 ## 近期更新
+- 【2022-01-16】add BadgeDrawable
 - 【2021-05-29】add ShapeableImageView
 - 【2021-05-23】add MaterialButton
-- 【2021-05-19】1.Update AS、Gradle; 2.Migrate ViewBinding
-- 【2021-01-08】TabLayout的使用细节、SearchView的调整适配
 
 
 | <img src="/gif/search_view.gif" width="285"/> | <img src="/gif/drawer.gif" width="285"/> | <img src="/gif/snackbar.gif" width="285"/> |
@@ -26,9 +25,9 @@
 | :--: | :--: | :--: |
 | 底部弹窗 | TabLayout | MaterialButton |
 
-| <img src="/gif/shapeable_image_view.png" width="285"/> |
-| :--: |
-| ShapeableImageView |
+| <img src="/gif/shapeable_image_view.png" width="285"/> | <img src="/gif/badge_drawable.png" width="285"/> |
+| :--: | :--: |
+| ShapeableImageView | BadgeDrawable |
 
 
 
@@ -52,10 +51,11 @@
 * BottomSheetDialog
 * MaterialButton
 * ShapeableImageView
+* BadgeDrawable
 * 等
 
 <br>
 
-#### 博客文档：http://blog.csdn.net/yechaoa/article/category/7228044
+## 博客文档：http://blog.csdn.net/yechaoa/article/category/7228044
 
 

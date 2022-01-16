@@ -10,7 +10,7 @@ import com.yechaoa.materialdesign.databinding.ActivityMainBinding
 
 class MainActivity : ToolbarActivity<ActivityMainBinding>() {
 
-    private var mList: MutableList<String> = mutableListOf()
+    private lateinit var mList: MutableList<String>
     private lateinit var mAdapter: MainAdapter
 
     override fun getViewBinding(): ActivityMainBinding {
@@ -25,20 +25,23 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
         //回调刷新toolbar的menu，页面初始化或者在需要的时候调用
         invalidateOptionsMenu()
 
-        mList.add(getString(R.string.swipe_refresh_layout))
-        mList.add(getString(R.string.floating_action_button))
-        mList.add(getString(R.string.snack_bar))
-        mList.add(getString(R.string.tab_layout))
-        mList.add(getString(R.string.card_view))
-        mList.add(getString(R.string.bottom_navigation))
-        mList.add(getString(R.string.collapsing_toolbar))
-        mList.add(getString(R.string.text_input_layout))
-        mList.add(getString(R.string.search_view))
-        mList.add(getString(R.string.tab_layout_custom_view))
-        mList.add(getString(R.string.drawer_layout))
-        mList.add(getString(R.string.bottom_sheet))
-        mList.add(getString(R.string.material_button))
-        mList.add(getString(R.string.shapeable_image_view))
+        mList = mutableListOf(
+            getString(R.string.swipe_refresh_layout),
+            getString(R.string.floating_action_button),
+            getString(R.string.snack_bar),
+            getString(R.string.tab_layout),
+            getString(R.string.card_view),
+            getString(R.string.bottom_navigation),
+            getString(R.string.collapsing_toolbar),
+            getString(R.string.text_input_layout),
+            getString(R.string.search_view),
+            getString(R.string.tab_layout_custom_view),
+            getString(R.string.drawer_layout),
+            getString(R.string.bottom_sheet),
+            getString(R.string.material_button),
+            getString(R.string.shapeable_image_view),
+            getString(R.string.badge_drawable)
+        )
 
         mBinding.recycleView.layoutManager = GridLayoutManager(this, 2)
         mAdapter = MainAdapter(this, mList)
@@ -65,6 +68,7 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
                     11 -> openActivity(BottomSheetActivity::class.java)
                     12 -> openActivity(MaterialButtonActivity::class.java)
                     13 -> openActivity(ShapeableImageViewActivity::class.java)
+                    14 -> openActivity(BadgeDrawableActivity::class.java)
                 }
             }
         })
