@@ -59,6 +59,7 @@ class BadgeDrawableActivity : ToolbarActivity<ActivityBadgeDrawableBinding>() {
         mBinding.tvBadge.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 BadgeDrawable.create(this@BadgeDrawableActivity).apply {
+                    // 设置基于目标view的位置
                     badgeGravity = BadgeDrawable.TOP_END
                     number = 6
                     backgroundColor = ContextCompat.getColor(this@BadgeDrawableActivity, R.color.colorPrimary)
