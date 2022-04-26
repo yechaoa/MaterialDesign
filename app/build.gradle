@@ -3,7 +3,6 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 31
-    buildToolsVersion '30.0.1'
     defaultConfig {
         applicationId "com.yechaoa.materialdesign"
         minSdkVersion 23
