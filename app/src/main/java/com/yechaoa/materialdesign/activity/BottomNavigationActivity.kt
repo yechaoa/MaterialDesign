@@ -6,6 +6,7 @@ import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 import com.yechaoa.materialdesign.R
 import com.yechaoa.materialdesign.databinding.ActivityBottomNavigationBinding
 
@@ -20,30 +21,30 @@ class BottomNavigationActivity : ToolbarActivity<ActivityBottomNavigationBinding
     }
 
     override fun initView() {
-        mBinding.navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        mBinding.navigation2.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        mBinding.navigation.setOnItemSelectedListener(mOnNavigationItemSelectedListener)
+        mBinding.navigation2.setOnItemSelectedListener(mOnNavigationItemSelectedListener)
         mBinding.navigation2.selectedItemId = R.id.navigation_dashboard
-        mBinding.navigation3.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        mBinding.navigation3.setOnItemSelectedListener(mOnNavigationItemSelectedListener)
         setBadge(2, 5)
     }
 
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+    private val mOnNavigationItemSelectedListener = NavigationBarView.OnItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
                 mBinding.message.setText(R.string.title_home)
-                return@OnNavigationItemSelectedListener true
+                return@OnItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
                 mBinding.message.setText(R.string.title_dashboard)
-                return@OnNavigationItemSelectedListener true
+                return@OnItemSelectedListener true
             }
             R.id.navigation_notifications -> {
                 mBinding.message.setText(R.string.title_notifications)
-                return@OnNavigationItemSelectedListener true
+                return@OnItemSelectedListener true
             }
             R.id.navigation_test -> {
                 mBinding.message.setText(R.string.title_test)
-                return@OnNavigationItemSelectedListener true
+                return@OnItemSelectedListener true
             }
         }
         false

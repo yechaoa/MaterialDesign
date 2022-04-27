@@ -9,6 +9,7 @@
 - Kotlin 1.6.20
 
 ### 近期更新
+- 【2022-04-27】Migrating from M2 to M3
 - 【2022-04-25】update TabLayout
 - 【2022-01-16】add BadgeDrawable
 - 【2021-05-29】add ShapeableImageView
