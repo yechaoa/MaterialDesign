@@ -3,12 +3,18 @@
 ![](https://img.shields.io/badge/language-kotlin-orange.svg)
 ![](https://img.shields.io/badge/CSDN-yechaoa-green.svg)
 
-## 近期更新
+### 环境
+- Android Studio Bumblebee | 2021.1.1 Patch 3
+- Android Gradle Plugin 7.2
+- Kotlin 1.6.20
+
+### 近期更新
 - 【2022-04-25】update TabLayout
 - 【2022-01-16】add BadgeDrawable
 - 【2021-05-29】add ShapeableImageView
 - 【2021-05-23】add MaterialButton
 
+### 效果
 
 | <img src="/gif/search_view.gif" width="285"/> | <img src="/gif/drawer.gif" width="285"/> | <img src="/gif/snackbar.gif" width="285"/> |
 | :--: | :--: | :--: |
@@ -30,6 +36,7 @@
 | :--: | :--: |
 | ShapeableImageView | BadgeDrawable |
 
+### 组件
 
 * ShapeableImageView
 * MaterialButton
@@ -56,6 +63,9 @@
 
 <br>
 
-## 博客文档：http://blog.csdn.net/yechaoa/article/category/7228044
+### 系列博客
+
+http://blog.csdn.net/yechaoa/article/category/7228044
+
 
 

@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.yechaoa.materialdesign"
         minSdkVersion 23
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 2
         versionName "2.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -36,8 +36,8 @@ dependencies {
     })
     testImplementation 'junit:junit:4.13.2'
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.31"
-    implementation "androidx.core:core-ktx:1.5.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.20"
+    implementation "androidx.core:core-ktx:1.6.0"
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation "androidx.constraintlayout:constraintlayout:2.0.4"
