@@ -15,7 +15,7 @@ class CardViewActivity : ToolbarActivity<ActivityCardViewBinding>() {
     }
 
     override fun initView() {
-        mBinding.cardView.setOnClickListener {
+        mBinding.cardViewElevated.setOnClickListener {
             Toast.makeText(this@CardViewActivity, "CardView", Toast.LENGTH_SHORT).show()
         }
     }

@@ -8,13 +8,6 @@
 - Android Gradle Plugin 7.2
 - Kotlin 1.6.20
 
-### 近期更新
-- 【2022-04-27】Migrating from M2 to M3
-- 【2022-04-25】update TabLayout
-- 【2022-01-16】add BadgeDrawable
-- 【2021-05-29】add ShapeableImageView
-- 【2021-05-23】add MaterialButton
-
 ### 效果
 
 | <img src="/gif/search_view.gif" width="285"/> | <img src="/gif/drawer.gif" width="285"/> | <img src="/gif/snackbar.gif" width="285"/> |
@@ -33,9 +26,9 @@
 | :--: | :--: | :--: |
 | 底部弹窗 | TabLayout | MaterialButton |
 
-| <img src="/gif/shapeable_image_view.png" width="285"/> | <img src="/gif/badge_drawable.png" width="285"/> |
-| :--: | :--: |
-| ShapeableImageView | BadgeDrawable |
+| <img src="/gif/shapeable_image_view.png" width="285"/> | <img src="/gif/badge_drawable.png" width="285"/> | <img src="/gif/card_view.png" width="285"/> |
+| :--: | :--: | :--: |
+| ShapeableImageView | BadgeDrawable | CardView |
 
 ### 组件
 
@@ -61,6 +54,14 @@
 * NavigationView
 * SearchView
 * 等
+
+### 近期更新
+- 【2022-04-30】update CardView
+- 【2022-04-27】Migrating from M2 to M3
+- 【2022-04-25】update TabLayout
+- 【2022-01-16】add BadgeDrawable
+- 【2021-05-29】add ShapeableImageView
+- 【2021-05-23】add MaterialButton
 
 <br>
 

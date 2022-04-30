@@ -124,5 +124,8 @@
     <string name="hint_name">请输入用户名</string>
     <string name="hint_password">请输入密码</string>
     <string name="login">登录</string>
+    <string name="title">Title</string>
+    <string name="sub_title">SubTitle</string>
+    <string name="go">Go</string>
 
 </resources>

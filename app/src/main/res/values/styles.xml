@@ -121,4 +121,11 @@
         <item name="cornerSizeBottomRight">50%</item>
     </style>
 
+    <!--ShapeableImageView 左上左下 圆角 -->
+    <style name="LeftAndBottomStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerSizeBottomLeft">10dp</item>
+    </style>
+
 </resources>
