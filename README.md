@@ -30,6 +30,10 @@
 | :--: | :--: | :--: |
 | ShapeableImageView | BadgeDrawable | CardView |
 
+| <img src="/gif/dynamic_color.gif" width="285"/> |
+| :--: |
+| Dynamic Color |
+
 ### 组件
 
 * ShapeableImageView
