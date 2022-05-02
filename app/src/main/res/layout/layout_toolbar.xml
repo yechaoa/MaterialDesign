@@ -4,15 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/AppTheme.ToolBar"
+        app:theme="@style/ToolBarTheme"
+        style="@style/Widget.Material3.Toolbar"
         app:menu="@menu/menu_toolbar"
         app:navigationIcon="@mipmap/ic_back"
+        app:titleTextAppearance="?attr/textAppearanceTitleMedium"
         app:title="@string/app_name"
         app:titleTextColor="@color/white" />
 

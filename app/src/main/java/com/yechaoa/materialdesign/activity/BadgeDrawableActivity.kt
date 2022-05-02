@@ -1,12 +1,14 @@
 package com.yechaoa.materialdesign.activity
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.view.ViewTreeObserver
 import androidx.core.content.ContextCompat
 import com.google.android.material.badge.BadgeDrawable
 import com.google.android.material.badge.BadgeUtils
 import com.yechaoa.materialdesign.R
 import com.yechaoa.materialdesign.databinding.ActivityBadgeDrawableBinding
+
 
 /**
  * GitHub : https://github.com/yechaoa
@@ -62,8 +64,10 @@ class BadgeDrawableActivity : ToolbarActivity<ActivityBadgeDrawableBinding>() {
                     // 设置基于目标view的位置
                     badgeGravity = BadgeDrawable.TOP_END
                     number = 6
-                    backgroundColor = ContextCompat.getColor(this@BadgeDrawableActivity, R.color.colorPrimary)
+//                    backgroundColor = ContextCompat.getColor(this@BadgeDrawableActivity, R.color.colorPrimary)
+                    backgroundColor = getAttrColorPrimary()
                     isVisible = true
+                    horizontalOffset = -10
                     BadgeUtils.attachBadgeDrawable(this, mBinding.tvBadge)
                 }
                 mBinding.tvBadge.viewTreeObserver.removeOnGlobalLayoutListener(this)

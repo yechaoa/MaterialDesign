@@ -53,9 +53,11 @@
 * TextInputEditText
 * NavigationView
 * SearchView
+* Dynamic Color
 * 等
 
 ### 近期更新
+- 【2022-05-01】Android 12 Dynamic Color
 - 【2022-04-30】update CardView
 - 【2022-04-27】Migrating from M2 to M3
 - 【2022-04-25】update TabLayout

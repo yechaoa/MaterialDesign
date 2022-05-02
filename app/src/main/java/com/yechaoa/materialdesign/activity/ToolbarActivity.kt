@@ -1,17 +1,19 @@
 package com.yechaoa.materialdesign.activity
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewbinding.ViewBinding
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.snackbar.Snackbar
 import com.yechaoa.materialdesign.R
 
 abstract class ToolbarActivity<VB : ViewBinding> : AppCompatActivity() {
 
     protected open lateinit var mBinding: VB
-    protected open lateinit var mToolbar: Toolbar
+    protected open lateinit var mToolbar: MaterialToolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,4 +63,14 @@ abstract class ToolbarActivity<VB : ViewBinding> : AppCompatActivity() {
     protected abstract fun setToolbar()
     protected abstract fun initView()
 
+    /**
+     * 代码获取 ?attr/colorPrimary
+     */
+    protected fun getAttrColorPrimary(): Int {
+        val attribute = intArrayOf(R.attr.colorPrimary)
+        val array = this.theme.obtainStyledAttributes(attribute)
+        val color = array.getColor(0, Color.TRANSPARENT)
+        array.recycle()
+        return color
+    }
 }

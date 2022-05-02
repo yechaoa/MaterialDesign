@@ -3,13 +3,14 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <!-- 注释指定主题颜色，跟随系统dynamic color       -->
+        <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--        <item name="colorAccent">@color/colorAccent</item>-->
     </style>
 
-    <!--修改字体和图标的颜色-->
-    <style name="AppTheme.ToolBar" parent="AppTheme">
+    <!--修改字体和图标的颜色 Widget.Material3.Toolbar-->
+    <style name="ToolBarTheme">
         <item name="titleTextColor">@color/white</item>
         <item name="actionMenuTextColor">@color/white</item>
         <item name="colorControlNormal">@color/white</item>

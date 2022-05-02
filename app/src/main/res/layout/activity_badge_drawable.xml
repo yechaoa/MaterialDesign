@@ -21,12 +21,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include"
         app:tabIndicator="@drawable/shape_tab_indicator"
-        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabIndicatorColor="?attr/colorPrimary"
         app:tabIndicatorFullWidth="false"
         app:tabMaxWidth="200dp"
         app:tabMinWidth="100dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabSelectedTextColor="?attr/colorPrimary"
         app:tabTextColor="@color/gray">
 
         <com.google.android.material.tabs.TabItem
@@ -102,8 +102,8 @@
         android:layout_margin="10dp"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/colorPrimary"
+        android:background="?attr/colorPrimary"
+        app:itemBackground="?attr/colorPrimary"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

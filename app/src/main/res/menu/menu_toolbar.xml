@@ -10,7 +10,6 @@
     -->
     <item
         android:id="@+id/menu_author"
-        android:iconTint="@color/white"
         android:title="@string/author"
         app:showAsAction="always" />
     <item

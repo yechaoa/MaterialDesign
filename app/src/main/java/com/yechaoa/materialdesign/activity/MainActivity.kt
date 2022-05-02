@@ -1,6 +1,8 @@
 package com.yechaoa.materialdesign.activity
 
 import android.content.Intent
+import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
@@ -18,6 +20,11 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
     }
 
     override fun setToolbar() {}
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d("MainActivity","onCreate")
+    }
 
     override fun initView() {
         mToolbar.navigationIcon = null
