@@ -1,10 +1,12 @@
 package com.yechaoa.materialdesign.activity
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.View
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yechaoa.materialdesign.R
 import com.yechaoa.materialdesign.adapter.MainAdapter
@@ -23,7 +25,7 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("MainActivity","onCreate")
+        Log.d("MainActivity", "onCreate")
     }
 
     override fun initView() {
@@ -55,6 +57,19 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
         mBinding.recycleView.adapter = mAdapter
 
         setListener()
+
+        initFloatingButtonImage()
+    }
+
+    /**
+     * 修改主题后会重建，初始化显示icon
+     */
+    private fun initFloatingButtonImage() {
+        if (isDarkTheme()) {
+            mBinding.floatingButton.setImageResource(R.mipmap.ic_day)
+        } else {
+            mBinding.floatingButton.setImageResource(R.mipmap.ic_night)
+        }
     }
 
     private fun setListener() {
@@ -79,6 +94,22 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
                 }
             }
         })
+
+        mBinding.floatingButton.setOnClickListener {
+            if (isDarkTheme()) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+        }
+    }
+
+    /**
+     * 是否深色主题
+     */
+    private fun isDarkTheme(): Boolean {
+        val flag = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        return flag == Configuration.UI_MODE_NIGHT_YES
     }
 
     /**
