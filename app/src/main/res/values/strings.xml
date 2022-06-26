@@ -23,6 +23,8 @@
     <string name="material_button">MaterialButton</string>
     <string name="shapeable_image_view">ShapeableImageView</string>
     <string name="badge_drawable">BadgeDrawable</string>
+    <string name="drag_recyclerview">DragRecyclerview</string>
+    <string name="notification">Notification</string>
 
     <string name="pull_to_refresh">下拉开始刷新</string>
 

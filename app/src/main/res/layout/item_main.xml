@@ -3,7 +3,7 @@
     android:id="@+id/item_textView"
     style="@style/Widget.MaterialComponents.Button.Icon"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="56dp"
     android:layout_margin="6dp"
     android:gravity="center"
     android:insetTop="0dp"

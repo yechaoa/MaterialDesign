@@ -3,12 +3,14 @@
 ![](https://img.shields.io/badge/language-kotlin-orange.svg)
 ![](https://img.shields.io/badge/CSDN-yechaoa-green.svg)
 
-### 环境
+Starred please  :kiss:
+
+### 环境（Configuration）
 - Android Studio Bumblebee | 2021.1.1 Patch 3
 - Android Gradle Plugin 7.2
 - Kotlin 1.6.20
 
-### 效果
+### 效果（Example）
 
 | <img src="/gif/search_view.gif" width="285"/> | <img src="/gif/drawer.gif" width="285"/> | <img src="/gif/snackbar.gif" width="285"/> |
 | :--: | :--: | :--: |
@@ -30,12 +32,11 @@
 | :--: | :--: | :--: |
 | ShapeableImageView | BadgeDrawable | CardView |
 
-| <img src="/gif/dynamic_color.gif" width="285"/> |
-| :--: |
-| Dynamic Color |
+| <img src="/gif/dynamic_color.gif" width="285"/> | <img src="/gif/notification_1.png" width="285"/> | <img src="/gif/notification_2.png" width="285"/> |
+| :--: | :--: | :--: |
+| Dynamic Color | Notification_1 | Notification_2 |
 
-### 组件
-
+### 组件（Components）
 * ShapeableImageView
 * MaterialButton
 * BadgeDrawable
@@ -58,20 +59,22 @@
 * NavigationView
 * SearchView
 * Dynamic Color
-* 等
+* Notification
+* ...
 
-### 近期更新
+### 近期更新（Update）
+- 【2022-06-26】Add Notification
 - 【2022-05-01】Android 12 Dynamic Color
-- 【2022-04-30】update CardView
+- 【2022-04-30】Update CardView
 - 【2022-04-27】Migrating from M2 to M3
-- 【2022-04-25】update TabLayout
-- 【2022-01-16】add BadgeDrawable
-- 【2021-05-29】add ShapeableImageView
-- 【2021-05-23】add MaterialButton
+- 【2022-04-25】Update TabLayout
+- 【2022-01-16】Add BadgeDrawable
+- 【2021-05-29】Add ShapeableImageView
+- 【2021-05-23】Add MaterialButton
 
 <br>
 
-### 系列博客
+### 系列博客（Blog）
 
 http://blog.csdn.net/yechaoa/article/category/7228044
 

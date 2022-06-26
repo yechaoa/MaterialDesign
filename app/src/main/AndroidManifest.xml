@@ -40,6 +40,8 @@
         <activity android:name=".activity.MaterialButtonActivity" />
         <activity android:name=".activity.ShapeableImageViewActivity" />
         <activity android:name=".activity.BadgeDrawableActivity" />
+        <activity android:name=".activity.DragRecyclerViewActivity" />
+        <activity android:name=".activity.NotificationActivity" />
     </application>
 
 </manifest>

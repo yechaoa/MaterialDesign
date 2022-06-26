@@ -49,7 +49,9 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
             getString(R.string.bottom_sheet),
             getString(R.string.material_button),
             getString(R.string.shapeable_image_view),
-            getString(R.string.badge_drawable)
+            getString(R.string.badge_drawable),
+            getString(R.string.drag_recyclerview),
+            getString(R.string.notification)
         )
 
         mBinding.recycleView.layoutManager = GridLayoutManager(this, 2)
@@ -91,6 +93,8 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
                     12 -> openActivity(MaterialButtonActivity::class.java)
                     13 -> openActivity(ShapeableImageViewActivity::class.java)
                     14 -> openActivity(BadgeDrawableActivity::class.java)
+                    15 -> openActivity(DragRecyclerViewActivity::class.java)
+                    16 -> openActivity(NotificationActivity::class.java)
                 }
             }
         })
