@@ -6,8 +6,9 @@
     android:layout_height="wrap_content"
     android:foreground="?android:attr/selectableItemBackground"
     android:gravity="center"
-    android:background="@drawable/shape_radius5_white"
-    android:paddingVertical="8dp"
+    android:background="@drawable/shape_radius5_primary"
+    android:paddingVertical="12dp"
     android:paddingHorizontal="2dp"
+    android:textColor="@color/white"
     android:textSize="14sp"
     tools:text="TextView" />

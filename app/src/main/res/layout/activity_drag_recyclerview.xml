@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="2022 Q1 编程语言热度(Grid)："
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include" />
 
@@ -35,6 +36,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:text="2022 Q1 编程语言热度(Linear)："
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_grid" />
 

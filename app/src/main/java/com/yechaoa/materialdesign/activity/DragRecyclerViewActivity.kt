@@ -1,6 +1,7 @@
 package com.yechaoa.materialdesign.activity
 
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,7 +22,7 @@ import com.yechaoa.materialdesign.widget.GridSpaceDecoration
 class DragRecyclerViewActivity : ToolbarActivity<ActivityDragRecyclerviewBinding>() {
 
     companion object {
-        private var SPAN_COUNT = 5
+        private var SPAN_COUNT = 4
     }
 
     override fun getViewBinding(): ActivityDragRecyclerviewBinding {
@@ -52,7 +53,10 @@ class DragRecyclerViewActivity : ToolbarActivity<ActivityDragRecyclerviewBinding
 
     private fun initLinear() {
         mBinding.rvLinear.layoutManager = LinearLayoutManager(this)
-        mBinding.rvLinear.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+        val drawable = ContextCompat.getDrawable(this, R.drawable.shape_rv_divider)
+        drawable?.let { dividerItemDecoration.setDrawable(it) }
+        mBinding.rvLinear.addItemDecoration(dividerItemDecoration)
         val list = getDatas()
         val adapter = DragLinearAdapter(this, list)
         mBinding.rvLinear.adapter = adapter
