@@ -1,15 +1,16 @@
 package com.yechaoa.materialdesign.activity
 
+import android.util.Log
 import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.yechaoa.materialdesign.R
-import com.yechaoa.materialdesign.adapter.DragGridAdapter
-import com.yechaoa.materialdesign.adapter.DragLinearAdapter
+import com.yechaoa.materialdesign.adapter.DragAdapter
 import com.yechaoa.materialdesign.databinding.ActivityDragRecyclerviewBinding
-import com.yechaoa.materialdesign.widget.GridSpaceDecoration
+import com.yechaoa.materialdesign.widget.DragCallBack
+import com.yechaoa.materialdesign.widget.GridSpaceItemDecoration
 
 
 /**
@@ -21,9 +22,14 @@ import com.yechaoa.materialdesign.widget.GridSpaceDecoration
  */
 class DragRecyclerViewActivity : ToolbarActivity<ActivityDragRecyclerviewBinding>() {
 
+    private val tag = "DragRecyclerViewActivity"
+
     companion object {
         private var SPAN_COUNT = 4
     }
+
+    private lateinit var mAdapter: DragAdapter
+    private lateinit var mGridItemDecoration: GridSpaceItemDecoration
 
     override fun getViewBinding(): ActivityDragRecyclerviewBinding {
         return ActivityDragRecyclerviewBinding.inflate(layoutInflater)
@@ -34,56 +40,83 @@ class DragRecyclerViewActivity : ToolbarActivity<ActivityDragRecyclerviewBinding
     }
 
     override fun initView() {
-        initGrid()
-        initLinear()
+        initRecycleView()
+        setListener()
     }
 
-    private fun initGrid() {
-        mBinding.rvGrid.layoutManager = GridLayoutManager(this, SPAN_COUNT)
-        mBinding.rvGrid.addItemDecoration(GridSpaceDecoration(22f, 22f))
+    private fun initRecycleView() {
+        mBinding.recycleView.layoutManager = GridLayoutManager(this, SPAN_COUNT)
+        if (!::mGridItemDecoration.isInitialized) {
+            mGridItemDecoration = GridSpaceItemDecoration(SPAN_COUNT)
+            mBinding.recycleView.addItemDecoration(mGridItemDecoration, 0)
+        }
         val list = getDatas()
-        val adapter = DragGridAdapter(this, list)
-        mBinding.rvGrid.adapter = adapter
-        adapter.setOnItemClickListener(object : DragGridAdapter.OnItemClickListener {
+        mAdapter = DragAdapter(this, list)
+        mBinding.recycleView.adapter = mAdapter
+
+        // 设置拖拽/滑动
+        val dragCallBack = DragCallBack(mAdapter, list)
+        val itemTouchHelper = ItemTouchHelper(dragCallBack)
+        itemTouchHelper.attachToRecyclerView(mBinding.recycleView)
+
+        mAdapter.setOnItemClickListener(object : DragAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@DragRecyclerViewActivity, list[position], Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@DragRecyclerViewActivity, dragCallBack.getData()[position], Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onItemLongClick(holder: DragAdapter.ViewHolder) {
+                if (holder.adapterPosition != mAdapter.fixedPosition) {
+                    itemTouchHelper.startDrag(holder)
+                }
             }
         })
     }
 
-    private fun initLinear() {
-        mBinding.rvLinear.layoutManager = LinearLayoutManager(this)
-        val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
-        val drawable = ContextCompat.getDrawable(this, R.drawable.shape_rv_divider)
-        drawable?.let { dividerItemDecoration.setDrawable(it) }
-        mBinding.rvLinear.addItemDecoration(dividerItemDecoration)
-        val list = getDatas()
-        val adapter = DragLinearAdapter(this, list)
-        mBinding.rvLinear.adapter = adapter
-        adapter.setOnItemClickListener(object : DragLinearAdapter.OnItemClickListener {
-            override fun onItemClick(position: Int) {
-                Toast.makeText(this@DragRecyclerViewActivity, list[position], Toast.LENGTH_SHORT).show()
+    private fun setListener() {
+        mBinding.tvSwitch.setOnClickListener {
+            when (mBinding.recycleView.layoutManager) {
+                is GridLayoutManager -> {
+                    mBinding.recycleView.layoutManager = LinearLayoutManager(this)
+                }
+                else -> {
+                    mBinding.recycleView.layoutManager = GridLayoutManager(this, SPAN_COUNT)
+                }
+            }
+        }
+
+        mAdapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
+
+            override fun onItemRangeMoved(fromPosition: Int, toPosition: Int, itemCount: Int) {
+                super.onItemRangeMoved(fromPosition, toPosition, itemCount)
+                Log.i(tag, "onItemRangeMoved")
+            }
+
+            override fun onItemRangeRemoved(positionStart: Int, itemCount: Int) {
+                super.onItemRangeRemoved(positionStart, itemCount)
+                Log.i(tag, "onItemRangeRemoved")
+            }
+
+            override fun onChanged() {
+                super.onChanged()
+                Log.i(tag, "onChanged")
             }
         })
     }
 
     private fun getDatas(): MutableList<String> {
         return mutableListOf(
-            "JS",
-            "Python",
-            "Java",
-            "C/C++",
-            "C#",
-            "PHP",
-            "Kotlin",
-            "Visual DT",
-            "Swift",
-            "Go",
-            "OC",
-            "Rust",
-            "Ruby",
-            "Dart",
-            "Lua"
+            "推荐",
+            "Android",
+            "iOS",
+            "前端",
+            "后端",
+            "音视频",
+            "大数据",
+            "人工智能",
+            "云原生",
+            "运维",
+            "算法",
+            "代码人生"
         )
     }
 }

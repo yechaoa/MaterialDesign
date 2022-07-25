@@ -36,6 +36,10 @@ Starred please  :kiss:
 | :--: | :--: | :--: |
 | Dynamic Color | Notification_1 | Notification_2 |
 
+| <img src="/gif/drag_recyclerview.gif" width="285"/> | 
+| :--: | 
+| ItemTouchHelper | 
+
 ### 组件（Components）
 * ShapeableImageView
 * MaterialButton
@@ -60,9 +64,11 @@ Starred please  :kiss:
 * SearchView
 * Dynamic Color
 * Notification
+* ItemTouchHelper
 * ...
 
 ### 近期更新（Update）
+- 【2022-07-26】Add ItemTouchHelper
 - 【2022-06-26】Add Notification
 - 【2022-05-01】Android 12 Dynamic Color
 - 【2022-04-30】Update CardView
@@ -76,7 +82,7 @@ Starred please  :kiss:
 
 ### 系列博客（Blog）
 
-http://blog.csdn.net/yechaoa/article/category/7228044
-
+- [CSDN-MaterialDesign](https://blog.csdn.net/yechaoa/category_7228044.html?spm=1001.2014.3001.5482)
+- [掘金](https://juejin.cn/user/659362706101735/posts)
 
 

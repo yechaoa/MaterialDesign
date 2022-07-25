@@ -13,4 +13,9 @@
     <color name="color_dcdcdc">#DCDCDC</color>
     <color name="translucent">#66000000</color>
     <color name="transparent">#00000000</color>
+
+    <color name="greenPrimary">#4CAF50</color>
+    <color name="greenDark">#388E3C</color>
+    <color name="greenAccent">#8BC34A</color>
+
 </resources>

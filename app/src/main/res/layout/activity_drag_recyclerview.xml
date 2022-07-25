@@ -15,39 +15,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="2022 Q1 编程语言热度(Grid)："
+        android:text="长按菜单进入编辑："
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_grid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_one" />
-
     <TextView
-        android:id="@+id/tv_title_two"
+        android:id="@+id/tv_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:text="2022 Q1 编程语言热度(Linear)："
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_grid" />
+        android:layout_margin="10dp"
+        android:text="点击切换"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_one" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_linear"
+        android:id="@+id/recycleView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_two" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_one" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
