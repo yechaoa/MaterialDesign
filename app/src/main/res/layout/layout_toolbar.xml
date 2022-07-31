@@ -7,7 +7,7 @@
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="56dp"
         android:background="?attr/colorPrimary"
         app:theme="@style/ToolBarTheme"
         style="@style/Widget.Material3.Toolbar"

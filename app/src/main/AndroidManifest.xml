@@ -42,6 +42,7 @@
         <activity android:name=".activity.BadgeDrawableActivity" />
         <activity android:name=".activity.DragRecyclerViewActivity" />
         <activity android:name=".activity.NotificationActivity" />
+        <activity android:name=".activity.FloatViewActivity" />
     </application>
 
 </manifest>

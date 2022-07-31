@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yechaoa.materialdesign.activity.FloatingActionButtonActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/layout_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_show_float"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加 FloatView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_hide_float"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="隐藏 FloatView" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="吸边方式：" />
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:checked="true"
+                    android:id="@+id/radio_top_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上下" />
+
+                <RadioButton
+                    android:id="@+id/radio_left_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="左右" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

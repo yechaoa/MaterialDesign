@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/language-kotlin-orange.svg)
 ![](https://img.shields.io/badge/CSDN-yechaoa-green.svg)
 
-Starred please  :kiss:
+star :kiss:
 
 ### 环境（Configuration）
 - Android Studio Bumblebee | 2021.1.1 Patch 3
@@ -36,11 +36,12 @@ Starred please  :kiss:
 | :--: | :--: | :--: |
 | Dynamic Color | Notification_1 | Notification_2 |
 
-| <img src="/gif/drag_recyclerview.gif" width="285"/> | 
-| :--: | 
-| ItemTouchHelper | 
+| <img src="/gif/drag_recyclerview.gif" width="285"/> | <img src="/gif/float_view.gif" width="285"/> |
+| :--: | :--: |
+| ItemTouchHelper | FloatView |
 
 ### 组件（Components）
+* FloatView
 * ShapeableImageView
 * MaterialButton
 * BadgeDrawable
@@ -68,6 +69,7 @@ Starred please  :kiss:
 * ...
 
 ### 近期更新（Update）
+- 【2022-07-31】Add FloatView
 - 【2022-07-26】Add ItemTouchHelper
 - 【2022-06-26】Add Notification
 - 【2022-05-01】Android 12 Dynamic Color
