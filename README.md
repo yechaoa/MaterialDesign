@@ -5,12 +5,14 @@
 
 star :kiss:
 
-### 环境（Configuration）
+### 环境（Environment）
 - Android Studio Bumblebee | 2021.1.1 Patch 3
 - Android Gradle Plugin 7.2
 - Kotlin 1.6.20
 
 ### 效果（Example）
+
+多图预警！！！
 
 | <img src="/gif/search_view.gif" width="285"/> | <img src="/gif/drawer.gif" width="285"/> | <img src="/gif/snackbar.gif" width="285"/> |
 | :--: | :--: | :--: |
