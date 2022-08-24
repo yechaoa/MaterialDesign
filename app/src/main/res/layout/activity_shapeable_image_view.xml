@@ -142,7 +142,7 @@
                 android:layout_margin="10dp"
                 android:src="@mipmap/ic_avatar" />
 
-            text3<TextView
+            <TextView
                 android:id="@+id/text2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
