@@ -23,6 +23,7 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
     private var mViewWidth = 0
     private var mViewHeight = 0
     private var mToolBarHeight = dp2px(56F) // toolbar默认高度
+    private var mDragDistance = 0.5 // 默认吸边需要的拖拽距离为屏幕的一半
 
     companion object {
         var ADSORB_VERTICAL = 1001
@@ -81,6 +82,12 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
         mOnFloatClickListener = listener
     }
 
+    /**
+     * 设置吸边需要的拖拽距离，默认半屏修改吸边方向，取值0-1
+     */
+    fun setDragDistance(distance: Double) {
+        mDragDistance = distance
+    }
 
     private var mDownX = 0F
     private var mDownY = 0F
@@ -137,7 +144,7 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
         if (isOriginalFromTop()) {
             // 上半屏
             val centerY = mViewHeight / 2 + abs(event.rawY - mFirstY)
-            if (centerY < getScreenHeight() / 2) {
+            if (centerY < getAdsorbHeight()) {
                 //滑动距离<半屏=吸顶
                 val topY = 0f + mToolBarHeight
                 animate().setInterpolator(DecelerateInterpolator()).setDuration(300).y(topY).start()
@@ -149,7 +156,7 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
         } else {
             // 下半屏
             val centerY = mViewHeight / 2 + abs(event.rawY - mFirstY)
-            if (centerY < getScreenHeight() / 2) {
+            if (centerY < getAdsorbHeight()) {
                 //滑动距离<半屏=吸底
                 val bottomY = getContentHeight() - mViewHeight
                 animate().setInterpolator(DecelerateInterpolator()).setDuration(300).y(bottomY.toFloat()).start()
@@ -190,7 +197,7 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
         if (isOriginalFromLeft()) {
             // 左半屏
             val centerX = mViewWidth / 2 + abs(event.rawX - mFirstX)
-            if (centerX < getScreenWidth() / 2) {
+            if (centerX < getAdsorbWidth()) {
                 //滑动距离<半屏=吸左
                 val leftX = 0f
                 animate().setInterpolator(DecelerateInterpolator()).setDuration(300).x(leftX).start()
@@ -202,7 +209,7 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
         } else {
             // 右半屏
             val centerX = mViewWidth / 2 + abs(event.rawX - mFirstX)
-            if (centerX < getScreenWidth() / 2) {
+            if (centerX < getAdsorbWidth()) {
                 //滑动距离<半屏=吸右
                 val rightX = getScreenWidth() - mViewWidth
                 animate().setInterpolator(DecelerateInterpolator()).setDuration(300).x(rightX.toFloat()).start()
@@ -238,6 +245,20 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
      */
     private fun isOriginalFromLeft(): Boolean {
         return mFirstX < getScreenWidth() / 2
+    }
+
+    /**
+     * 获取上下吸边时需要拖拽的距离
+     */
+    private fun getAdsorbHeight(): Double {
+        return getScreenHeight() * mDragDistance
+    }
+
+    /**
+     * 获取左右吸边时需要拖拽的距离
+     */
+    private fun getAdsorbWidth(): Double {
+        return getScreenWidth() * mDragDistance
     }
 
     /**
