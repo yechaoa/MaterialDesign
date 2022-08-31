@@ -98,10 +98,6 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
                 // 记录第一次在屏幕上坐标，用于计算初始位置
                 mFirstY = event.rawY.roundToInt()
                 mFirstX = event.rawX.roundToInt()
-//                Log.d("FloatManager", "x = $x，mFirstX = $mFirstX")
-//                Log.d("FloatManager", "y = $y，mFirstY = $mFirstY")
-//                Log.d("FloatManager", "left = ${left}，right = $right")
-//                Log.d("FloatManager", "top = ${top}，bottom = $bottom")
             }
             MotionEvent.ACTION_MOVE -> {
                 isMove = true
@@ -163,6 +159,18 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
                 animate().setInterpolator(DecelerateInterpolator()).setDuration(300).y(topY).start()
             }
         }
+        resetHorizontal(event)
+    }
+
+    /**
+     * 上下拖拽时，如果横向拖拽也超出屏幕，则上下吸边时左右也吸边
+     */
+    private fun resetHorizontal(event: MotionEvent) {
+        if (event.rawX < mViewWidth) {
+            animate().setInterpolator(DecelerateInterpolator()).setDuration(300).x(0F).start()
+        } else if (event.rawX > getScreenWidth() - mViewWidth) {
+            animate().setInterpolator(DecelerateInterpolator()).setDuration(300).x(getScreenWidth().toFloat() - mViewWidth).start()
+        }
     }
 
     /**
@@ -203,6 +211,18 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
                 val leftX = 0f
                 animate().setInterpolator(DecelerateInterpolator()).setDuration(300).x(leftX).start()
             }
+        }
+        resetVertical(event)
+    }
+
+    /**
+     * 左右拖拽时，如果纵向拖拽也超出屏幕，则左右吸边时上下也吸边
+     */
+    private fun resetVertical(event: MotionEvent) {
+        if (event.rawY < mViewHeight) {
+            animate().setInterpolator(DecelerateInterpolator()).setDuration(300).y(0F + mToolBarHeight).start()
+        } else if (event.rawY > getContentHeight() - mViewHeight) {
+            animate().setInterpolator(DecelerateInterpolator()).setDuration(300).y(getContentHeight().toFloat() - mViewHeight).start()
         }
     }
 
