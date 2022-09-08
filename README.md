@@ -38,15 +38,16 @@ star :kiss:
 | :--: | :--: | :--: |
 | Dynamic Color | Notification_1 | Notification_2 |
 
-| <img src="/gif/drag_recyclerview.gif" width="285"/> | <img src="/gif/float_view.gif" width="285"/> |
-| :--: | :--: |
-| ItemTouchHelper | FloatView |
+| <img src="/gif/drag_recyclerview.gif" width="285"/> | <img src="/gif/float_view.gif" width="285"/> | <img src="/gif/guide_line.png" width="285"/> |
+| :--: | :--: | :--: |
+| ItemTouchHelper | FloatView | GuideLine |
 
 ### 组件（Components）
 * FloatView
 * ShapeableImageView
 * MaterialButton
 * BadgeDrawable
+* Dynamic Color
 * DrawerLayout
 * BottomSheetDialog
 * ConstraintLayout
@@ -65,12 +66,13 @@ star :kiss:
 * TextInputEditText
 * NavigationView
 * SearchView
-* Dynamic Color
 * Notification
 * ItemTouchHelper
+* GuideLine
 * ...
 
 ### 近期更新（Update）
+- 【2022-09-08】Add GuideLine
 - 【2022-07-31】Add FloatView
 - 【2022-07-26】Add ItemTouchHelper
 - 【2022-06-26】Add Notification
