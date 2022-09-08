@@ -52,7 +52,8 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
             getString(R.string.badge_drawable),
             getString(R.string.drag_recyclerview),
             getString(R.string.notification),
-            getString(R.string.float_view)
+            getString(R.string.float_view),
+            getString(R.string.guide_line)
         )
 
         mBinding.recycleView.layoutManager = GridLayoutManager(this, 2)
@@ -97,6 +98,7 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
                     15 -> openActivity(DragRecyclerViewActivity::class.java)
                     16 -> openActivity(NotificationActivity::class.java)
                     17 -> openActivity(FloatViewActivity::class.java)
+                    18 -> openActivity(GuideLineActivity::class.java)
                 }
             }
         })
