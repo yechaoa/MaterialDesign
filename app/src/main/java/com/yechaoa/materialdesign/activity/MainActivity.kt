@@ -56,7 +56,6 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
             getString(R.string.guide_line)
         )
 
-        mBinding.recycleView.layoutManager = GridLayoutManager(this, 2)
         mAdapter = MainAdapter(this, mList)
         mBinding.recycleView.adapter = mAdapter
 
