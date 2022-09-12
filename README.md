@@ -42,6 +42,10 @@ star :kiss:
 | :--: | :--: | :--: |
 | ItemTouchHelper | FloatView | GuideLine |
 
+| <img src="/gif/divider.png" width="285"/> | 
+| :--: | 
+| divider | 
+
 ### 组件（Components）
 * FloatView
 * ShapeableImageView
@@ -69,9 +73,11 @@ star :kiss:
 * Notification
 * ItemTouchHelper
 * GuideLine
+* divider
 * ...
 
 ### 近期更新（Update）
+- 【2022-09-13】Add divider
 - 【2022-09-08】Add GuideLine
 - 【2022-07-31】Add FloatView
 - 【2022-07-26】Add ItemTouchHelper

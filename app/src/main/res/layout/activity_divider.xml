@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yechaoa.materialdesign.activity.FloatingActionButtonActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/layout_toolbar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="点击隐藏/显示"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/shape_radius5_white"
+        android:divider="@drawable/shape_divider_linear"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_visible">
+
+        <TextView
+            style="@style/MyTextView"
+            android:text="删除个人信息"
+            app:drawableStartCompat="@mipmap/ic_helper" />
+
+        <TextView
+            style="@style/MyTextView"
+            android:text="注销账户"
+            app:drawableStartCompat="@mipmap/ic_helper" />
+
+        <TextView
+            android:id="@+id/tv_about"
+            style="@style/MyTextView"
+            android:text="关于我们"
+            app:drawableStartCompat="@mipmap/ic_helper" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

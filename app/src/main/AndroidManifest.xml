@@ -44,6 +44,7 @@
         <activity android:name=".activity.NotificationActivity" />
         <activity android:name=".activity.FloatViewActivity" />
         <activity android:name=".activity.GuideLineActivity" />
+        <activity android:name=".activity.DividerActivity" />
     </application>
 
 </manifest>
