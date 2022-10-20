@@ -2,6 +2,7 @@
 
 ![](https://img.shields.io/badge/language-kotlin-orange.svg)
 ![](https://img.shields.io/badge/CSDN-yechaoa-green.svg)
+![Profile views](https://gpvc.arturio.dev/yechaoaMaterialDesign)
 
 star :kiss:
 
