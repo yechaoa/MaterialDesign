@@ -28,6 +28,7 @@
     <string name="float_view">FloatView</string>
     <string name="guide_line">GuideLine</string>
     <string name="divider">Divider</string>
+    <string name="dynamic_layout">DynamicLayout</string>
 
     <string name="pull_to_refresh">下拉开始刷新</string>
 

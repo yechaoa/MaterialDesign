@@ -43,9 +43,9 @@ star :kiss:
 | :--: | :--: | :--: |
 | ItemTouchHelper | FloatView | GuideLine |
 
-| <img src="/gif/divider.png" width="285"/> | 
-| :--: | 
-| divider | 
+| <img src="/gif/divider.png" width="285"/> | <img src="/gif/dynamic_layout.gif" width="285"/> |
+| :--: | :--: |
+| divider | DynamicLayout |
 
 ### 组件（Components）
 * FloatView
@@ -78,6 +78,7 @@ star :kiss:
 * ...
 
 ### 近期更新（Update）
+- 【2023-05-10】Add DynamicLayout
 - 【2022-09-13】Add divider
 - 【2022-09-08】Add GuideLine
 - 【2022-07-31】Add FloatView

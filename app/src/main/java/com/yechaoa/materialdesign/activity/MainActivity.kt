@@ -54,7 +54,9 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
             getString(R.string.notification),
             getString(R.string.float_view),
             getString(R.string.guide_line),
-            getString(R.string.divider)
+            getString(R.string.divider),
+            getString(R.string.dynamic_layout)
+
         )
 
         mAdapter = MainAdapter(this, mList)
@@ -100,6 +102,7 @@ class MainActivity : ToolbarActivity<ActivityMainBinding>() {
                     17 -> openActivity(FloatViewActivity::class.java)
                     18 -> openActivity(GuideLineActivity::class.java)
                     19 -> openActivity(DividerActivity::class.java)
+                    20 -> openActivity(DynamicLayoutActivity::class.java)
                 }
             }
         })

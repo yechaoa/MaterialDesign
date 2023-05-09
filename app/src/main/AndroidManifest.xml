@@ -45,6 +45,7 @@
         <activity android:name=".activity.FloatViewActivity" />
         <activity android:name=".activity.GuideLineActivity" />
         <activity android:name=".activity.DividerActivity" />
+        <activity android:name=".activity.DynamicLayoutActivity" />
     </application>
 
 </manifest>
