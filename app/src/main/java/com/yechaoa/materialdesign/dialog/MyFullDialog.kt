@@ -44,7 +44,7 @@ class MyFullDialog : BottomSheetDialogFragment() {
     override fun onStart() {
         super.onStart()
         //拿到系统的 bottom_sheet
-        val view: FrameLayout = dialog?.findViewById(R.id.design_bottom_sheet)!!
+        val view: FrameLayout = dialog?.findViewById(com.google.android.material.R.id.design_bottom_sheet)!!
         //设置view高度
         view.layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
         //获取behavior

@@ -2,14 +2,14 @@
 
 ![](https://img.shields.io/badge/language-kotlin-orange.svg)
 ![](https://img.shields.io/badge/CSDN-yechaoa-green.svg)
-![Profile views](https://gpvc.arturio.dev/yechaoaMaterialDesign)
+![](https://img.shields.io/badge/JueJin-yechaoa-blue.svg)
 
 star :kiss:
 
 ### 环境（Environment）
-- Android Studio Bumblebee | 2021.1.1 Patch 3
-- Android Gradle Plugin 7.2
-- Kotlin 1.6.20
+- Android Studio Giraffe | 2022.3.1 Patch 1
+- Android Gradle Plugin 8.0
+- Kotlin 1.7.10
 
 ### 效果（Example）
 
@@ -78,6 +78,7 @@ star :kiss:
 * ...
 
 ### 近期更新（Update）
+- 【2023-01-28】Update Gradle、Basic Dependencies、and Optimize Code
 - 【2023-05-10】Add DynamicLayout
 - 【2022-09-13】Add divider
 - 【2022-09-08】Add GuideLine

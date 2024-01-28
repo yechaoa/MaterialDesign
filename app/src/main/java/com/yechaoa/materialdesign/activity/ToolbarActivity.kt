@@ -67,7 +67,7 @@ abstract class ToolbarActivity<VB : ViewBinding> : AppCompatActivity() {
      * 代码获取 ?attr/colorPrimary
      */
     protected fun getAttrColorPrimary(): Int {
-        val attribute = intArrayOf(R.attr.colorPrimary)
+        val attribute = intArrayOf(android.R.attr.colorPrimary)
         val array = this.theme.obtainStyledAttributes(attribute)
         val color = array.getColor(0, Color.TRANSPARENT)
         array.recycle()

@@ -53,7 +53,7 @@ class SearchViewActivity : ToolbarActivity<ActivitySearchViewBinding>() {
         //设置提示词
         mSearchView.queryHint = "请输入关键字"
         //设置输入框文字颜色
-        val editText = mSearchView.findViewById<EditText>(R.id.search_src_text)
+        val editText = mSearchView.findViewById<EditText>(com.google.android.material.R.id.search_src_text)
         editText.setHintTextColor(ContextCompat.getColor(this, R.color.color_dcdcdc))
         editText.setTextColor(ContextCompat.getColor(this, R.color.white))
 
