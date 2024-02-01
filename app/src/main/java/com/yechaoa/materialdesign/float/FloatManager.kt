@@ -1,6 +1,7 @@
 package com.yechaoa.materialdesign.float
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.widget.FrameLayout
 import androidx.activity.ComponentActivity
 import androidx.core.view.contains
@@ -19,11 +20,11 @@ import com.yechaoa.materialdesign.widget.BaseFloatView
 object FloatManager {
 
     private lateinit var mContentView: FrameLayout
-    private var mActivity: ComponentActivity? = null
+    private var mActivity: Activity? = null
     private var mFloatView: BaseFloatView? = null
     private var mIsShowing: Boolean = false
 
-    fun with(activity: ComponentActivity): FloatManager {
+    fun with(activity: Activity): FloatManager {
         mContentView = activity.window.decorView.findViewById(android.R.id.content) as FrameLayout
         mActivity = activity
         addLifecycle(mActivity)
@@ -62,11 +63,12 @@ object FloatManager {
         }
     }
 
-    private fun addLifecycle(activity: ComponentActivity?) {
-        activity?.lifecycle?.addObserver(mLifecycleEventObserver)
+    private fun addLifecycle(activity: Activity?) {
+        (activity as? ComponentActivity)?.lifecycle?.addObserver(mLifecycleEventObserver)
     }
 
     private var mLifecycleEventObserver = LifecycleEventObserver { _, event ->
+        // 自动回收
         if (event == Lifecycle.Event.ON_DESTROY) {
             hide()
         }
@@ -79,7 +81,7 @@ object FloatManager {
         }
         mFloatView?.release()
         mFloatView = null
-        mActivity?.lifecycle?.removeObserver(mLifecycleEventObserver)
+        (mActivity as? ComponentActivity)?.lifecycle?.removeObserver(mLifecycleEventObserver)
         mActivity = null
     }
 }
