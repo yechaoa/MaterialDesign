@@ -49,17 +49,17 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/radio_left_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:checked="true"
+                    android:text="左右" />
+
+                <RadioButton
                     android:id="@+id/radio_top_bottom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="上下" />
-
-                <RadioButton
-                    android:id="@+id/radio_left_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="左右" />
 
             </RadioGroup>
 

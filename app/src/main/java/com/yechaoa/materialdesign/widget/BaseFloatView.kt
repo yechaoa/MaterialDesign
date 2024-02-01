@@ -2,6 +2,8 @@ package com.yechaoa.materialdesign.widget
 
 import android.app.Activity
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import android.util.AttributeSet
 import android.util.DisplayMetrics
 import android.view.MotionEvent
@@ -70,6 +72,14 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
     protected abstract fun getAdsorbType(): Int
 
     /**
+     * 多久自动缩一半
+     * 默认：3000，单位：毫秒，小于等于0则不自动缩
+     */
+    open fun getAdsorbTime(): Long {
+        return 3000
+    }
+
+    /**
      * 点击事件
      */
     protected var mOnFloatClickListener: OnFloatClickListener? = null
@@ -89,6 +99,24 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
         mDragDistance = distance
     }
 
+    private var mIsInside = false
+
+    private var mHandler = Handler(Looper.getMainLooper())
+
+    /**
+     * 自动缩到屏幕内一半，目前只支持左右（水平方向），垂直防线改改参数就行
+     */
+    private val mRunnable = Runnable {
+        if (x > getScreenWidth() / 2) {
+            // 右边
+            animate().setInterpolator(DecelerateInterpolator()).setDuration(300).alpha(0.5f).x((getScreenWidth() - mViewWidth / 2).toFloat()).start()
+        } else {
+            // 左边
+            animate().setInterpolator(DecelerateInterpolator()).setDuration(300).alpha(0.5f).x((-width / 2).toFloat()).start()
+        }
+        mIsInside = true
+    }
+
     private var mDownX = 0F
     private var mDownY = 0F
     private var mFirstY: Int = 0
@@ -105,12 +133,18 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
                 // 记录第一次在屏幕上坐标，用于计算初始位置
                 mFirstY = event.rawY.roundToInt()
                 mFirstX = event.rawX.roundToInt()
+
+                mHandler.removeCallbacksAndMessages(mRunnable)
+
+                resetStatus()
             }
+
             MotionEvent.ACTION_MOVE -> {
                 isMove = true
                 offsetTopAndBottom((y - mDownY).toInt())
                 offsetLeftAndRight((x - mDownX).toInt())
             }
+
             MotionEvent.ACTION_UP -> {
                 if (isMove) {
                     if (getAdsorbType() == ADSORB_VERTICAL) {
@@ -122,9 +156,26 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
                     mOnFloatClickListener?.onClick(v)
                 }
                 isMove = false
+
+                if (getAdsorbTime() > 0) {
+                    mHandler.postDelayed(mRunnable, getAdsorbTime())
+                }
             }
         }
         return getIsCanDrag()
+    }
+
+    private fun resetStatus() {
+        if (mIsInside) {
+            if (x > getScreenWidth() / 2) {
+                // 右边
+                animate().setInterpolator(DecelerateInterpolator()).setDuration(300).alpha(1f).x((getScreenWidth() - mViewWidth).toFloat()).start()
+            } else {
+                // 左边
+                animate().setInterpolator(DecelerateInterpolator()).setDuration(300).alpha(1f).x(0F).start()
+            }
+            mIsInside = false
+        }
     }
 
     /**
@@ -231,6 +282,13 @@ abstract class BaseFloatView : FrameLayout, View.OnTouchListener {
         } else if (event.rawY > getContentHeight() - mViewHeight) {
             animate().setInterpolator(DecelerateInterpolator()).setDuration(300).y(getContentHeight().toFloat() - mViewHeight).start()
         }
+    }
+
+    /**
+     * 是否缩到屏幕内
+     */
+    fun isInside(): Boolean {
+        return mIsInside
     }
 
     /**

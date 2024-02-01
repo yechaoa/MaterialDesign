@@ -33,9 +33,6 @@ object FloatManager {
 
     fun add(floatView: BaseFloatView): FloatManager {
         if (mIsShowing) return this
-//        if (::mContentView.isInitialized && mContentView.contains(floatView)) {
-//            mContentView.removeView(floatView)
-//        }
         mFloatView = floatView
         return this
     }
@@ -50,6 +47,7 @@ object FloatManager {
         if (!mIsShowing) {
             mContentView.removeView(mFloatView)
             mContentView.addView(mFloatView)
+            mFloatView?.bringToFront()
             mIsShowing = true
         }
     }
@@ -64,6 +62,7 @@ object FloatManager {
     }
 
     private fun addLifecycle(activity: Activity?) {
+        // 继承自ComponentActivity的Activity才是LifecycleOwner，才能添加LifecycleEventObserver
         (activity as? ComponentActivity)?.lifecycle?.addObserver(mLifecycleEventObserver)
     }
 

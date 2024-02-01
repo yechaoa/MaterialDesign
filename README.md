@@ -78,6 +78,8 @@ star :kiss:
 * ...
 
 ### 近期更新（Update）
+- 【2023-02-01】Update FloatView
+- 【2023-01-28】Update MaterialButton、BadgeDrawable、and Optimize Code
 - 【2023-01-28】Update Gradle、Basic Dependencies、and Optimize Code
 - 【2023-05-10】Add DynamicLayout
 - 【2022-09-13】Add divider

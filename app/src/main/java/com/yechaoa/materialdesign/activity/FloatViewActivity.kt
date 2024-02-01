@@ -24,10 +24,10 @@ class FloatViewActivity : ToolbarActivity<ActivityFloatViewBinding>() {
         mBinding.btnShowFloat.setOnClickListener {
             mFloatView = AvatarFloatView(this)
             mFloatView?.setDragDistance(0.3)
-            if (mBinding.radioTopBottom.isChecked) {
-                mFloatView?.setAdsorbType(BaseFloatView.ADSORB_VERTICAL)
-            } else {
+            if (mBinding.radioLeftRight.isChecked) {
                 mFloatView?.setAdsorbType(BaseFloatView.ADSORB_HORIZONTAL)
+            } else {
+                mFloatView?.setAdsorbType(BaseFloatView.ADSORB_VERTICAL)
             }
             FloatManager.with(this).add(mFloatView!!).show()
 
